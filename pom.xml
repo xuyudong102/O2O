@@ -14,7 +14,6 @@
     <module>o2o-web</module>
   </modules>
   <packaging>pom</packaging>
-  <name>o2o</name>
   <!--指定组件版本 -->
   <properties>
     <spring.version>4.3.3.RELEASE</spring.version>
@@ -27,11 +26,13 @@
   <!--Spring相关组件-->
   <dependencyManagement>
     <dependencies>
+      <!--core spring框架的基本核心工具类 spring其他组件都需要用到这个类-->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-core</artifactId>
         <version>${spring.version}</version>
       </dependency>
+      <!--ioc 访问控制文件 动态创建bean 控制翻转 -->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-beans</artifactId>
@@ -52,31 +53,37 @@
         <artifactId>spring-aspects</artifactId>
         <version>${spring.version}</version>
       </dependency>
+      <!--提供事务管理-->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-tx</artifactId>
         <version>${spring.version}</version>
       </dependency>
+      <!--spring对数据的访问-->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-jdbc</artifactId>
         <version>${spring.version}</version>
       </dependency>
+      <!--web开发工具类-->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-web</artifactId>
         <version>${spring.version}</version>
       </dependency>
+      <!--结合springmvc DisptcherServlet-->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-webmvc</artifactId>
         <version>${spring.version}</version>
       </dependency>
+      <!--测试类  junit封装-->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-test</artifactId>
         <version>${spring.version}</version>
       </dependency>
+      <!--提供大量扩展-->
       <dependency>
         <groupId>org.springframework</groupId>
         <artifactId>spring-context</artifactId>
@@ -102,13 +109,19 @@
         <version>${mybatis.spring.version}</version>
       </dependency>
 
-      <!--druid数据库连接池版本锁定-->
+      <!--c3p0数据库连接池版本锁定-->
       <dependency>
-        <groupId>com.alibaba</groupId>
-        <artifactId>druid</artifactId>
-        <version>${druid.version}</version>
+        <groupId>com.mchange</groupId>
+        <artifactId>c3p0</artifactId>
+        <version>0.9.5.2</version>
       </dependency>
 
+      <dependency>
+        <groupId>javax.servlet</groupId>
+        <artifactId>javax.servlet-api</artifactId>
+        <version>3.1.0</version>
+        <scope>provided</scope>
+      </dependency>
 
       <dependency>
         <groupId>jstl</groupId>
@@ -116,14 +129,37 @@
         <version>1.2</version>
         <scope>provided</scope>
       </dependency>
+      <!-- 为单元测试提供支持-->
       <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
         <version>4.12</version>
         <scope>test</scope>
       </dependency>
+      <!--引入logback 希望引入线上环境  scope test去掉-->
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.2.3</version>
+      </dependency>
+      <!--json解析-->
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.9.8</version>
+      </dependency>
+      <!--Map工具类 对标准java Collection的扩展  spring-core.jar 需要commons-collection.jar-->
+      <dependency>
+        <groupId>commons-collections</groupId>
+        <artifactId>commons-collections</artifactId>
+        <version>3.2</version>
+      </dependency>
+
     </dependencies>
+
   </dependencyManagement>
+
+
   <build>
     <plugins>
       <!--配置tomcat7插件-->

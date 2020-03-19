@@ -13,6 +13,13 @@
   <packaging>jar</packaging>
   <name>o2o-dao</name>
   <dependencies>
+    <!--让dao 依赖domain 才能找到domain里面的类-->
+    <dependency>
+      <groupId>com.xyd</groupId>
+      <artifactId>o2o-domain</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
+
     <dependency>
       <groupId>mysql</groupId>
       <artifactId>mysql-connector-java</artifactId>
@@ -25,20 +32,19 @@
       <groupId>org.mybatis</groupId>
       <artifactId>mybatis-spring</artifactId>
     </dependency>
-    <!-- 配置数据库连接池druid-->
+    <!-- 配置数据库连接池c3p0-->
     <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>druid</artifactId>
+      <groupId>com.mchange</groupId>
+      <artifactId>c3p0</artifactId>
+      <version>0.9.5.2</version>
     </dependency>
-    <!--让dao 依赖domain 才能找到domain里面的类-->
-    <dependency>
-      <groupId>com.xyd</groupId>
-      <artifactId>o2o-domain</artifactId>
-      <version>1.0-SNAPSHOT</version>
-    </dependency>
+
+
+
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <version>4.12</version>
     </dependency>
     <dependency>
       <groupId>org.springframework</groupId>
