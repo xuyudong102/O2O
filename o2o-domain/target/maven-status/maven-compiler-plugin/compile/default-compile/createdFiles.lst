@@ -1,0 +1,10 @@
+com\xyd\entity\LocalAuth.class
+com\xyd\entity\PersonInfo.class
+com\xyd\entity\WechatAuth.class
+com\xyd\entity\ProductCategory.class
+com\xyd\entity\Product.class
+com\xyd\entity\ShopCategory.class
+com\xyd\entity\Area.class
+com\xyd\entity\HeadLine.class
+com\xyd\entity\Shop.class
+com\xyd\entity\ProductImg.class
