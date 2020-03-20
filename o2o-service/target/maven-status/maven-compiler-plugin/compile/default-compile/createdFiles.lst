@@ -1,1 +1,2 @@
-com\xyd\App.class
+com\xyd\service\AreaService.class
+com\xyd\service\impl\AreaServiceImpl.class
