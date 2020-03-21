@@ -2,6 +2,8 @@ package com.xyd.controller.superadmin;
 
 import com.xyd.entity.Area;
 import com.xyd.service.AreaService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -25,8 +27,8 @@ import java.util.Map;
 public class AreaController {
     @Autowired
     private AreaService areaService;
-
-
+    /*使用logger*/
+    Logger logger = LoggerFactory.getLogger(AreaController.class);
 
     /**
      * modelmap 需要返回的值
@@ -38,6 +40,8 @@ public class AreaController {
     @RequestMapping(value = "/listarea",method = RequestMethod.GET)
     @ResponseBody
     public Map<String,Object> listArea(){
+        logger.info("===start===");
+        long startTime = System.currentTimeMillis();
         Map<String,Object> modelMap = new HashMap<String,Object>();
         List<Area> listAreas = new ArrayList<>();
         try{
@@ -48,6 +52,12 @@ public class AreaController {
             modelMap.put("success",false);
             modelMap.put("errMap",e.toString());
         }
+        logger.error("test error!");
+
+        long endTime = System.currentTimeMillis();
+        //debug 里面程序执行时间
+        logger.debug("costTime:[{}ms]",endTime-startTime);
+        logger.info("===end===");
         return modelMap;
     }
 }

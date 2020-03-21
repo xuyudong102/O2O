@@ -148,15 +148,14 @@
         <artifactId>jackson-databind</artifactId>
         <version>2.9.8</version>
       </dependency>
+
       <!--Map工具类 对标准java Collection的扩展  spring-core.jar 需要commons-collection.jar-->
       <dependency>
         <groupId>commons-collections</groupId>
         <artifactId>commons-collections</artifactId>
         <version>3.2</version>
       </dependency>
-
     </dependencies>
-
   </dependencyManagement>
 
 
