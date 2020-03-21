@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- namespace指定和哪个Mapper映射器接口对应 -->
+<mapper namespace="com.xyd.mapper.ShopMapper">
+	<!-- 定义SQL语句添加商铺-->
+    <!--userGeneratedKeys 获取主键值 插入到参数的实体对象中-->
+    <insert id="insertShop" parameterType="com.xyd.entity.Shop" useGeneratedKeys="true"
+            keyProperty="shopId" keyColumn="shop_id">
+        insert into tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr,
+        phone,shop_img,priority,create_time,last_edit_time,enable_status,advice)values
+        (#{owner.userId},#{area.areaId},#{shopCategory.shopCategoryId},#{shopName},#{shopDesc},#{shopAddr},
+        #{phone},#{shopImg},#{priority},#{creatTime},#{lastEditTime},#{enableStatus},#{advice})
+    </insert>
+    <!--更新店铺信息-->
+    <!--动态sql语句 如果参数对象有值就更新 没有值就不更新 area 区域id 不能更新 别忘了加,号-->
+    <update id="updateShop" parameterType="com.xyd.entity.Shop" >
+        update tb_shop
+        <set>
+            <if test="shopName!=null">shop_name=#{shopName},</if>
+            <if test="shopDesc!=null">shop_desc=#{shopDesc},</if>
+            <if test="shopAddr!=null">shop_addr=#{shopAddr},</if>
+            <if test="phone!=null">phone=#{phone},</if>
+            <if test="shopImg!=null">shop_img=#{shopImg},</if>
+            <if test="priority!=null">priority=#{priority},</if>
+            <if test="lastEditTime!=null">last_edit_time=#{lastEditTime},</if>
+            <if test="enableStatus!=null">enable_status=#{enableStatus},</if>
+            <if test="advice!=null">advice=#{advice},</if>
+            <if test="shopCategory!=null">shop_category_id=#{shopCategory.shopCategoryId},</if>
+            <if test="owner!=null">owner_id=#{owner.userId}</if>
+        </set>
+        where shop_id=#{shopId}
+    </update>
+</mapper>
