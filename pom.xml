@@ -12,6 +12,7 @@
     <module>o2o-dao</module>
     <module>o2o-service</module>
     <module>o2o-web</module>
+      <module>o2o-utils</module>
   </modules>
   <packaging>pom</packaging>
   <!--指定组件版本 -->

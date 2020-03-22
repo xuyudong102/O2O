@@ -1,6 +1,7 @@
 package com.xyd.mapper;
 
 import com.xyd.entity.Shop;
+import org.springframework.stereotype.Repository;
 
 /**
  * @author XuYuDong
@@ -10,7 +11,7 @@ import com.xyd.entity.Shop;
  * @description
  */
 
-
+@Repository("shopMapper")
 public interface ShopMapper {
     /**
      * 新增店铺

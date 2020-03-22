@@ -3,8 +3,10 @@ E:\idea_workspace\o2o\o2o-domain\src\main\java\com\xyd\entity\ShopCategory.java
 E:\idea_workspace\o2o\o2o-domain\src\main\java\com\xyd\entity\LocalAuth.java
 E:\idea_workspace\o2o\o2o-domain\src\main\java\com\xyd\entity\Area.java
 E:\idea_workspace\o2o\o2o-domain\src\main\java\com\xyd\entity\Shop.java
+E:\idea_workspace\o2o\o2o-domain\src\main\java\com\xyd\enums\ShopStateEnum.java
 E:\idea_workspace\o2o\o2o-domain\src\main\java\com\xyd\entity\HeadLine.java
 E:\idea_workspace\o2o\o2o-domain\src\main\java\com\xyd\entity\WechatAuth.java
+E:\idea_workspace\o2o\o2o-domain\src\main\java\com\xyd\dto\ShopExecution.java
 E:\idea_workspace\o2o\o2o-domain\src\main\java\com\xyd\entity\Product.java
 E:\idea_workspace\o2o\o2o-domain\src\main\java\com\xyd\entity\ProductCategory.java
 E:\idea_workspace\o2o\o2o-domain\src\main\java\com\xyd\entity\ProductImg.java

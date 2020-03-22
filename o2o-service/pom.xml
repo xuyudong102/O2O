@@ -30,6 +30,12 @@
       <artifactId>o2o-dao</artifactId>
       <version>1.0-SNAPSHOT</version>
     </dependency>
+    <!--引入工具项目-->
+    <dependency>
+      <groupId>com.xyd</groupId>
+      <artifactId>o2o-utils</artifactId>
+      <version>1.0-SNAPSHOT</version>
+    </dependency>
     <!-- 添加一个spring-jdbc  -->
     <dependency>
       <groupId>org.springframework</groupId>
