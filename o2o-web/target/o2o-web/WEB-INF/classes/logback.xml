@@ -86,7 +86,7 @@
          additivity->表示logger继承了root 的 level可以向控制台输出 但是权限依旧是logger的权限 debug
          name指定的package下面所有的类 都在logger里面输出
     -->
-    <logger name="com.xyd.controller" level="${log.level}" additivity="true">
+    <logger name="com.xyd" level="${log.level}" additivity="true">
         <appender-ref ref="debugAppender"/>
         <appender-ref ref="infoAppender"/>
         <appender-ref ref="errorAppender"/>

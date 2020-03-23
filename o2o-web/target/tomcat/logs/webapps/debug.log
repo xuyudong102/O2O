@@ -1,1 +1,72 @@
-2020-03-22 23:47:48.467 [http-bio-8888-exec-2] DEBUG com.xyd.controller.superadmin.AreaController - costTime:[1170ms]
+2020-03-23 23:19:46.772 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:19:46.854 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:19:46.912 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:19:46.925 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:19:46.926 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:19:46.930 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-23 23:21:37.353 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:21:37.807 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:21:37.915 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:21:37.931 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:21:37.932 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:21:37.936 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-23 23:21:39.388 [http-bio-8888-exec-5] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:21:39.389 [http-bio-8888-exec-5] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:21:39.393 [http-bio-8888-exec-5] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:21:39.399 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:21:39.399 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:21:39.403 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-23 23:25:54.749 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:25:54.826 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:25:54.883 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:25:54.894 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:25:54.894 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:25:54.897 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-23 23:29:37.221 [http-bio-8888-exec-7] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:29:37.222 [http-bio-8888-exec-7] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:29:37.227 [http-bio-8888-exec-7] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:29:37.228 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:29:37.228 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:29:37.232 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-23 23:30:01.052 [http-bio-8888-exec-9] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:30:01.052 [http-bio-8888-exec-9] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:30:01.056 [http-bio-8888-exec-9] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:30:01.056 [http-bio-8888-exec-9] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:30:01.057 [http-bio-8888-exec-9] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:30:01.060 [http-bio-8888-exec-9] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-23 23:30:03.787 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:30:03.788 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:30:03.793 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:30:03.793 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:30:03.794 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:30:03.796 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-23 23:32:19.692 [http-bio-8888-exec-4] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:32:19.693 [http-bio-8888-exec-4] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:32:19.696 [http-bio-8888-exec-4] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:32:19.697 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:32:19.697 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:32:19.705 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-23 23:33:22.011 [http-bio-8888-exec-1] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:33:22.013 [http-bio-8888-exec-1] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:33:22.015 [http-bio-8888-exec-1] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:33:22.016 [http-bio-8888-exec-1] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:33:22.017 [http-bio-8888-exec-1] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:33:22.019 [http-bio-8888-exec-1] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-23 23:33:48.655 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:33:48.824 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:33:48.868 [http-bio-8888-exec-3] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:33:48.876 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:33:48.877 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:33:48.879 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-23 23:33:52.843 [http-bio-8888-exec-5] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:33:52.845 [http-bio-8888-exec-5] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:33:52.848 [http-bio-8888-exec-5] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:33:52.853 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:33:52.854 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:33:52.858 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-23 23:33:53.786 [http-bio-8888-exec-7] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id is not null order by priority desc 
+2020-03-23 23:33:53.787 [http-bio-8888-exec-7] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 23:33:53.790 [http-bio-8888-exec-7] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 23:33:53.791 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-23 23:33:53.791 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-23 23:33:53.796 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2

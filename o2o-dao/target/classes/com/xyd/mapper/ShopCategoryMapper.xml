@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- namespace指定和哪个Mapper映射器接口对应 -->
+<mapper namespace="com.xyd.mapper.ShopCategoryMapper">
+	<!-- 定义SQL语句添加商铺-->
+    <!--根据parentid 查询子对象-->
+    <!--如果传入的对象不为空 那么parent_id 也不能为空 -->
+    <select id="queryShopCategory" resultType="com.xyd.entity.ShopCategory" >
+        select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,
+        priority,create_time,last_edit_time,parent_id
+        from tb_shop_category
+        <where>
+            <if test="shopCategoryCondition!=null">
+                and parent_id is not null
+            </if>
+        </where>
+        <where>
+            <if test="shopCategoryCondition.parent!=null">
+                and parent_id = #{shopCategoryCondition.parent.shopCategoryId}
+            </if>
+        </where>
+        order by priority desc
+    </select>
+</mapper>

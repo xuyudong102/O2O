@@ -6,9 +6,11 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
+
 import javax.imageio.ImageIO;
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Random;
@@ -26,7 +28,7 @@ public class ImageUtil {
     private static Logger logger = LoggerFactory.getLogger(ImageUtil.class);
 
     //类加载路径的绝对路径 (水印图片存储路径)
-    private static String basePath=Thread.currentThread().getContextClassLoader().getResource("").getPath().substring(1);
+    private static String basePath=Thread.currentThread().getContextClassLoader().getResource("").getPath();
     //simpleDateFormat 变量
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
     //随机数变量
@@ -54,15 +56,16 @@ public class ImageUtil {
 
     /**
      *处理缩略图 并返回目标图片的相对值路径
-     * @param thumbnail 上传图片的文件流
+     * @param shopImgInputSteam 上传图片的文件流
      * @param targetAddr 新图片目标文件地址
+     * @param fileName 传入文件名
      * @return 返回值不包含图片的基础路径  文件相对路径
      */
     //处理缩略图 门面照 和商品的小图
-    public static String generateThumbnail(File thumbnail,String targetAddr){
+    public static String generateThumbnail(InputStream shopImgInputSteam,String targetAddr,String fileName){
         //获取新文件的随机名 和 拓展名
         String realFileName = getRandomFileName();
-        String extension = getFileExtension(thumbnail);
+        String extension = getFileExtension(fileName);
         //创建 文件目标文件夹
         makeDirPath(targetAddr);
         //新文件地址:
@@ -70,26 +73,36 @@ public class ImageUtil {
         //将图片的相对路径输出到日志中
         logger.debug("current realtiveAddr is"+relativeAddr);
         //创建新的图片 基础图片路径+图片目标路径+随机生成图片名
-        String destFileName = PathUtil.getImgBasePath()+relativeAddr;
-        File dest = new File(destFileName);
+        File dest = new File(PathUtil.getImgBasePath()+relativeAddr);
         //将图片的全部路径输出到日志文件
         logger.debug("current completeAddr is"+PathUtil.getImgBasePath()+relativeAddr);
         try {
             //参数1:文件路径 size->图片大小 watermark水印图片的位置和图片路径和透明度     outputQuality->图片压缩一下
             //Thumbnails.of(thumbnail.getInputStream()).size(200,200).watermark(Positions.BOTTOM_RIGHT,ImageIO.read(new File(basePath+"watermark.jpg")),025f)
              // .outputQuality(0.8f).toFile(dest);
-            Thumbnails.of(thumbnail).size(200,200).watermark(Positions.BOTTOM_RIGHT,ImageIO.read(new File(basePath+"watermark.jpg")),0.25f).outputQuality(0.8f).toFile(dest);
+            Thumbnails.of(shopImgInputSteam).size(200,200).watermark(Positions.BOTTOM_RIGHT,ImageIO.read(new File(basePath+"watermark.jpg")),0.25f)
+             .outputQuality(0.8f).toFile(dest);
         }catch (IOException e){
             //如果生成失败了 向日志中打印错误信息
             logger.error(e.toString());
             //向控制台输出错误信息
             e.printStackTrace();
-            throw  new RuntimeException("文件保存错误!!");
         }
         //返回值不包含图片的基础路径
         return relativeAddr;
     }
 
+    public static void main(String[] args) throws IOException {
+        //参数1:文件路径 size->图片大小 watermark水印图片的位置和图片路径和透明度     outputQuality->图片压缩一下
+        try {
+            Thumbnails.of(new File("E:/idea_workspace/o2o/o2o-web/src/main/resources/meinv.jpg")).size(960,540)
+                    .watermark(Positions.BOTTOM_RIGHT,ImageIO.read(new File(basePath+"/watermark.jpg")),0.25f)
+                    .outputQuality(0.8f).toFile("E:/idea_workspace/o2o/o2o-web/src/main/resources/meinvnew.jpg");
+        } catch (IOException e) {
+
+            e.printStackTrace();
+        }
+    }
 
 
     /**
@@ -106,13 +119,11 @@ public class ImageUtil {
 
     /**
      * 获取输入流文件的拓展名
-     * @param cFile 文件输入流
+     * @param fileName 传入文件名
      * @return
      */
-    public static String getFileExtension(File cFile){
-        //String originalFileName = cFile.getOriginalFilename();
-        String originalFileName = cFile.getName();
-        return originalFileName.substring(originalFileName.lastIndexOf("."));
+    public static String getFileExtension(String fileName){
+        return fileName.substring(fileName.lastIndexOf("."));
     }
 
     /**

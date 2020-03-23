@@ -4,6 +4,7 @@ import com.xyd.dto.ShopExecution;
 import com.xyd.entity.Shop;
 
 import java.io.File;
+import java.io.InputStream;
 
 /**
  * @author XuYuDong
@@ -16,8 +17,8 @@ public interface ShopService {
     /**
      * 添加店铺信息
      * @param shop shop店铺实体
-     * @param shopImg shop图片文件流
+     * @param shopImgInputSteam shop图片文件流
      * @return
      */
-    ShopExecution addShop(Shop shop, File shopImg);
+    ShopExecution addShop(Shop shop, InputStream shopImgInputSteam,String fileName);
 }

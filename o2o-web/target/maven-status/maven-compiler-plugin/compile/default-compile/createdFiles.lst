@@ -1,1 +1,3 @@
 com\xyd\controller\superadmin\AreaController.class
+com\xyd\controller\shopadmin\ShopAdminController.class
+com\xyd\controller\shopadmin\ShopManagementController.class

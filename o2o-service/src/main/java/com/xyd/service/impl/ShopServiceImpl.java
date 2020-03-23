@@ -15,6 +15,8 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.imageio.ImageIO;
 import java.io.File;
+import java.io.InputStream;
+import java.lang.annotation.Target;
 import java.util.Date;
 
 /**
@@ -33,7 +35,7 @@ public class ShopServiceImpl implements ShopService {
     @Override
     @Transactional
     //因为只有runtimeexception 才能支持事务
-    public ShopExecution addShop(Shop shop, File shopImg) {
+    public ShopExecution addShop(Shop shop, InputStream shopImgInputSteam, String fileName) {
         //空值判断
         if(shop==null){
             //如果shop为空直接返回
@@ -51,10 +53,10 @@ public class ShopServiceImpl implements ShopService {
                 throw new ShopOperationException("店铺创建失败 数据库插入失败");
             }else{
                 //添加成功
-                if(shopImg!=null){
+                if(shopImgInputSteam!=null){
                     //本地存储图片
                     try{
-                        addShopImg(shop,shopImg);
+                        addShopImg(shop,shopImgInputSteam,fileName);
                     }catch (Exception e){
                         throw  new ShopOperationException("本地图片存储失败"+e.getMessage());
                     }
@@ -73,11 +75,12 @@ public class ShopServiceImpl implements ShopService {
     }
 
 
-    public void addShopImg(Shop shop,File shopImg){
+    public void addShopImg(Shop shop,InputStream shopImgInputSteam,String fileName){
         //根据商店id 获得路径  创建本地图片文件
-        String dest = PathUtil.getShopImgPath(shop.getShopId());
-        String shopImgAddr = ImageUtil.generateThumbnail(shopImg,dest);
+        String target = PathUtil.getShopImgPath(shop.getShopId());
+        String shopImgAddr = ImageUtil.generateThumbnail(shopImgInputSteam, target,fileName);
         shop.setShopImg(shopImgAddr);
     }
+
 
 }

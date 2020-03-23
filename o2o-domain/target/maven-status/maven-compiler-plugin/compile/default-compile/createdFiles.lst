@@ -1,8 +1,10 @@
+com\xyd\dto\ShopExecution.class
 com\xyd\entity\LocalAuth.class
 com\xyd\entity\PersonInfo.class
 com\xyd\entity\WechatAuth.class
 com\xyd\entity\ProductCategory.class
 com\xyd\entity\Product.class
+com\xyd\enums\ShopStateEnum.class
 com\xyd\entity\ShopCategory.class
 com\xyd\entity\Area.class
 com\xyd\entity\HeadLine.class

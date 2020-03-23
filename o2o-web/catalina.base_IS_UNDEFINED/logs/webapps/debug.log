@@ -1,8 +1,12 @@
-2020-03-23 00:18:44.518 [main] DEBUG com.xyd.mapper.ShopMapper.insertShop - ==>  Preparing: insert into tb_shop (owner_id,area_id,shop_category_id,shop_name,shop_desc,shop_addr, phone,shop_img,priority,create_time,last_edit_time,enable_status,advice)values (?,?,?,?,?,?, ?,?,?,?,?,?,?) 
-2020-03-23 00:18:44.583 [main] DEBUG com.xyd.mapper.ShopMapper.insertShop - ==> Parameters: 1(Long), 2(Integer), 1(Long), 测试的店铺1(String), test1(String), test1(String), test1(String), null, 1(Integer), 2020-03-23 00:18:44.454(Timestamp), 2020-03-23 00:18:44.454(Timestamp), 0(Integer), 审核中(String)
-2020-03-23 00:18:44.586 [main] DEBUG com.xyd.mapper.ShopMapper.insertShop - <==    Updates: 1
-2020-03-23 00:18:44.618 [main] DEBUG com.xyd.utils.ImageUtil - current realtiveAddr isupload\item\shop\21\2020-03-23-00-18-44-14975.jpg
-2020-03-23 00:18:44.618 [main] DEBUG com.xyd.utils.ImageUtil - current completeAddr isC:\projectdev\image\upload\item\shop\21\2020-03-23-00-18-44-14975.jpg
-2020-03-23 00:18:44.833 [main] DEBUG com.xyd.mapper.ShopMapper.updateShop - ==>  Preparing: update tb_shop SET shop_name=?, shop_desc=?, shop_addr=?, phone=?, shop_img=?, priority=?, last_edit_time=?, enable_status=?, advice=?, shop_category_id=?, owner_id=? where shop_id=? 
-2020-03-23 00:18:44.834 [main] DEBUG com.xyd.mapper.ShopMapper.updateShop - ==> Parameters: 测试的店铺1(String), test1(String), test1(String), test1(String), upload\item\shop\21\2020-03-23-00-18-44-14975.jpg(String), 1(Integer), 2020-03-23 00:18:44.454(Timestamp), 0(Integer), 审核中(String), 1(Long), 1(Long), 21(Long)
-2020-03-23 00:18:44.836 [main] DEBUG com.xyd.mapper.ShopMapper.updateShop - <==    Updates: 1
+2020-03-23 21:55:55.932 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2020-03-23 21:55:56.020 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 21:55:56.151 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 21:58:19.836 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2020-03-23 21:58:19.994 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 21:58:20.043 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1
+2020-03-23 22:07:21.156 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category order by priority desc 
+2020-03-23 22:07:21.301 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 
+2020-03-23 22:07:21.346 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 2
+2020-03-23 22:10:51.286 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==>  Preparing: select shop_category_id,shop_category_name,shop_category_desc,shop_category_img, priority,create_time,last_edit_time,parent_id from tb_shop_category WHERE parent_id = ? order by priority desc 
+2020-03-23 22:10:51.367 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - ==> Parameters: 1(Long)
+2020-03-23 22:10:51.398 [main] DEBUG c.xyd.mapper.ShopCategoryMapper.queryShopCategory - <==      Total: 1

@@ -1,2 +1,6 @@
+com\xyd\service\impl\ShopCategoryServiceImpl.class
+com\xyd\service\ShopService.class
 com\xyd\service\AreaService.class
+com\xyd\service\ShopCategoryService.class
 com\xyd\service\impl\AreaServiceImpl.class
+com\xyd\service\impl\ShopServiceImpl.class

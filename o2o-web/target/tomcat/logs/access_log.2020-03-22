@@ -1,2 +1,0 @@
-0:0:0:0:0:0:0:1 - - [22/Mar/2020:23:47:48 +0800] "GET /o2o/superadmin/listarea HTTP/1.1" 200 199 http-bio-8888-exec-2 3507
-0:0:0:0:0:0:0:1 - - [22/Mar/2020:23:47:48 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8888-exec-3 0
