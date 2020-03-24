@@ -11,6 +11,7 @@ import com.xyd.exceptions.ShopOperationException;
 import com.xyd.service.AreaService;
 import com.xyd.service.ShopCategoryService;
 import com.xyd.service.ShopService;
+import com.xyd.utils.CodeUtil;
 import com.xyd.utils.HttpServletRequestUtil;
 import com.xyd.utils.ImageUtil;
 import com.xyd.utils.PathUtil;
@@ -81,6 +82,14 @@ public class ShopManagementController {
     @ResponseBody
     private Map<String,Object> registerShop(HttpServletRequest request){
         Map<String,Object> modelMap = new HashMap<>();
+        //如果两个验证码不相同的话 modelMap直接返回验证码不正确
+        if(!CodeUtil.checkVerifyCode(request)){
+            modelMap.put("success",false);
+            modelMap.put("errMsg","验证码不正确!!");
+            return modelMap;
+        }
+
+
         //1.接收并转换相应的参数 包括店铺信息 以及图片信息
         String shopStr = HttpServletRequestUtil.getString(request,"shopStr");
         //把json对象转换成 java对象

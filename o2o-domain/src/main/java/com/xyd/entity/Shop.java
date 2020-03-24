@@ -18,7 +18,7 @@ public class Shop implements Serializable {
     private String phone;
     //店铺缩略图地址
     private String shopImg;
-    private Integer priority;
+    private Integer priority=1;
     private Date creatTime;
     private Date lastEditTime;
     //-1不可用0审核中1可用

@@ -32,6 +32,7 @@ $(function () {
                 $("#area").html(tempAreaHtml);
             }
             //返回信息失败
+
         });
     }
 
@@ -54,12 +55,20 @@ $(function () {
         var formData = new FormData();
         formData.append("shopImg",shopImg);
         formData.append("shopStr",JSON.stringify(shop));
+        //将验证码传进来  如果不对就不进行ajax提交
+        var verifyCodeActual=$("#j-captcha").val();
+        if(!verifyCodeActual){
+            //如果验证码输入为空 提升用户输入验证码
+            $.toast("请输入验证码");
+            return ;
+        }
+        formData.append("verifyCodeActual",verifyCodeActual);
         $.ajax({
             url:registerShopUrl,
             type:'POST',
             data:formData,
             contentType:false,
-            proceesData:false,
+            processData:false,
             cache:false,
             success:function(data){
                 if(data.success){
@@ -68,6 +77,8 @@ $(function () {
                 }else{
                     $.toast("提交失败!"+data.errMsg);
                 }
+                //请求发送后 更换 验证码
+                $("#captcha_img").click();
             }
         })
     });

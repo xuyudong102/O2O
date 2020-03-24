@@ -1,4 +1,5 @@
 com\xyd\utils\ImageUtil.class
 com\xyd\exceptions\ShopOperationException.class
+com\xyd\utils\CodeUtil.class
 com\xyd\utils\HttpServletRequestUtil.class
 com\xyd\utils\PathUtil.class

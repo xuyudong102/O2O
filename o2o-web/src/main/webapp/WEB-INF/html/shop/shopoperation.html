@@ -126,8 +126,13 @@
                         <div class="item-content">
                             <div class="item-inner">
                                 <div class="item-title label">验证码</div>
+                                <!--验证码输入-->
+                                <input type="text" id="j-captcha" placeholder="验证码">
+                                <!--验证码控件-->
                                 <div class="item-input">
-                                    <input type="text" id="shop-code" placeholder="验证码">
+                                    <img alt="点击更换" title="点击更换"  id="captcha-img"
+                                        onclick="changeVerifyCode(this)" src="Kaptcha"
+                                    >
                                 </div>
                             </div>
                         </div>
@@ -144,5 +149,7 @@
     </div>
 </div>
 <script src="resources/dist/js/shop/shopoperation.js" ></script>
+<script src="resources/dist/js/common/common.js" ></script>
+
 </body>
 </html>
