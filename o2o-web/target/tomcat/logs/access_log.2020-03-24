@@ -1,5 +1,0 @@
-0:0:0:0:0:0:0:1 - - [24/Mar/2020:13:47:56 +0800] "GET /o2o/shopadmin/shopoperation HTTP/1.1" 304 - http-bio-8888-exec-2 2779
-0:0:0:0:0:0:0:1 - - [24/Mar/2020:13:47:57 +0800] "GET /o2o/resources/dist/js/shop/shopoperation.js HTTP/1.1" 304 - http-bio-8888-exec-1 11
-0:0:0:0:0:0:0:1 - - [24/Mar/2020:13:47:57 +0800] "GET /o2o/resources/dist/js/common/common.js HTTP/1.1" 304 - http-bio-8888-exec-4 4
-0:0:0:0:0:0:0:1 - - [24/Mar/2020:13:47:57 +0800] "GET /o2o/Kaptcha HTTP/1.1" 200 2593 http-bio-8888-exec-3 311
-0:0:0:0:0:0:0:1 - - [24/Mar/2020:13:47:58 +0800] "GET /o2o/shopadmin/getshopinitinfo HTTP/1.1" 200 403 http-bio-8888-exec-5 1709

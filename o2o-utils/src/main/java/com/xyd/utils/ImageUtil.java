@@ -28,7 +28,7 @@ public class ImageUtil {
     private static Logger logger = LoggerFactory.getLogger(ImageUtil.class);
 
     //类加载路径的绝对路径 (水印图片存储路径)
-    private static String basePath=Thread.currentThread().getContextClassLoader().getResource("").getPath();
+    private static String basePath=Thread.currentThread().getContextClassLoader().getResource("").getPath().substring(1);
     //simpleDateFormat 变量
     private static final SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss");
     //随机数变量
@@ -71,6 +71,7 @@ public class ImageUtil {
         //新文件地址:
         String relativeAddr = targetAddr +realFileName+extension;
         //将图片的相对路径输出到日志中
+        System.out.println("水印文件路径为:"+basePath+"watermark.jpg");
         logger.debug("current realtiveAddr is"+relativeAddr);
         //创建新的图片 基础图片路径+图片目标路径+随机生成图片名
         File dest = new File(PathUtil.getImgBasePath()+relativeAddr);
@@ -82,6 +83,7 @@ public class ImageUtil {
              // .outputQuality(0.8f).toFile(dest);
             Thumbnails.of(shopImgInputSteam).size(200,200).watermark(Positions.BOTTOM_RIGHT,ImageIO.read(new File(basePath+"watermark.jpg")),0.25f)
              .outputQuality(0.8f).toFile(dest);
+
         }catch (IOException e){
             //如果生成失败了 向日志中打印错误信息
             logger.error(e.toString());
@@ -141,5 +143,27 @@ public class ImageUtil {
             dirPath.mkdirs();
         }
 
+    }
+
+    /**
+     * storePath是文件的路径还是图片的路径.
+     * 如果stroePath是文件的路径则删除文件
+     * 如果stroePath是目录路径 则删除所有文件
+     * @param storePath
+     */
+    public static void deleteFileOrPath(String storePath){
+        File fileOrPath = new File(PathUtil.getImgBasePath()+storePath);
+        if(fileOrPath.exists()){
+            //存在
+            if(fileOrPath.isDirectory()){
+                //如果是目录就把下面的所有文件都删除
+                File[] files = fileOrPath.listFiles();
+                for(File file:files){
+                    file.delete();
+                }
+            }
+            //不是目录就直接删除 是目录删除完目录删除文件
+            fileOrPath.delete();
+        }
     }
 }

@@ -14,6 +14,7 @@
     </insert>
     <!--更新店铺信息-->
     <!--动态sql语句 如果参数对象有值就更新 没有值就不更新 area 区域id 不能更新 别忘了加,号-->
+    <!--通过shopid 查询店铺信息-->
     <update id="updateShop" parameterType="com.xyd.entity.Shop" >
         update tb_shop
         <set>
@@ -31,4 +32,56 @@
         </set>
         where shop_id=#{shopId}
     </update>
+    <resultMap id="shopMap" type="com.xyd.entity.Shop">
+        <id property="shopId" column="shop_id"/>
+        <result column="shop_name" property="shopName"/>
+        <result column="shop_desc" property="shopDesc"/>
+        <result column="shop_addr" property="shopAddr"/>
+        <result column="phone" property="phone"/>
+        <result column="shop_img" property="shopImg"/>
+        <result column="priority" property="priority"/>
+        <result column="last_edit_time" property="lastEditTime"/>
+        <result column="enable_status" property="enableStatus"/>
+        <result column="advice" property="advice"/>
+        <association property="area" javaType="com.xyd.entity.Area" column="area_id">
+            <id property="areaId" column="area_id"/>
+            <result column="area_name" property="areaName"/>
+        </association>
+        <association property="shopCategory" javaType="com.xyd.entity.ShopCategory" column="shop_category_id">
+            <id property="shopCategoryId" column="shop_category_id"/>
+            <result column="shop_category_name" property="shopCategoryName"/>
+        </association>
+        <association property="owner" javaType="com.xyd.entity.PersonInfo" column="owner_id">
+            <id property="userId" column="user_id"/>
+            <result column="name" property="name"/>
+        </association>
+    </resultMap>
+    <!--根据shopId 查询shop对象信息-->
+    <select id="queryByShopId" resultMap="shopMap" parameterType="Long">
+        SELECT
+        s.shop_id,
+        s.shop_name,
+        s.shop_desc,
+        s.shop_addr,
+        s.phone,
+        s.shop_img,
+        s.priority,
+        s.last_edit_time,
+        s.enable_status,
+        s.advice,
+        sc.shop_category_id,
+        sc.shop_category_name,
+        a.area_id,
+        a.area_name
+        FROM
+        tb_shop s,
+        tb_shop_category sc,
+        tb_area a
+        WHERE
+        a.area_id=s.area_id
+        AND
+        sc.shop_category_id = s.shop_category_id
+        AND
+        s.shop_id=#{shopId}
+    </select>
 </mapper>

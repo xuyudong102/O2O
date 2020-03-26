@@ -38,6 +38,9 @@ $(function () {
 
     //为提交按添加点击事件
     $("#submit").click(function () {
+        //TODO  在获取信息之前 使用正则判断输入字符是否合法
+
+
         //当点击提交按钮的时候
         var shop={};
         shop.shopName=$("#shop-name").val();
@@ -74,11 +77,17 @@ $(function () {
                 if(data.success){
                     //添加成功
                     $.toast("提交成功!");
+                    //提交成功后自动刷新页面
+                    $("#shop-name").val("");
+                    $("#shop-addr").val("");
+                    $("#shop-phone").val("");
+                    $("#shop-desc").val("");
+                    $("#j-captcha").val("");
                 }else{
                     $.toast("提交失败!"+data.errMsg);
                 }
                 //请求发送后 更换 验证码
-                $("#captcha_img").click();
+                $("#captcha-img").click();
             }
         })
     });

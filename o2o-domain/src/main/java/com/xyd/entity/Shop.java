@@ -11,7 +11,7 @@ import java.util.Date;
  * @description 商铺实体类
  */
 public class Shop implements Serializable {
-    private long shopId;
+    private Long shopId;
     private String shopName;
     private String shopDesc;
     private String shopAddr;
@@ -35,7 +35,7 @@ public class Shop implements Serializable {
     public Shop() {
     }
 
-    public Shop(long shopId, String shopName, String shopDesc, String shopAddr, String phone, String shopImg, Integer priority, Date creatTime, Date lastEditTime, Integer enableStatus, String advice, Area area, PersonInfo owner, ShopCategory shopCategory) {
+    public Shop(Long shopId, String shopName, String shopDesc, String shopAddr, String phone, String shopImg, Integer priority, Date creatTime, Date lastEditTime, Integer enableStatus, String advice, Area area, PersonInfo owner, ShopCategory shopCategory) {
         this.shopId = shopId;
         this.shopName = shopName;
         this.shopDesc = shopDesc;
@@ -52,7 +52,7 @@ public class Shop implements Serializable {
         this.shopCategory = shopCategory;
     }
 
-    public long getShopId() {
+    public Long getShopId() {
         return shopId;
     }
 

@@ -51,6 +51,7 @@ public class ShopDaoTest extends BaseTest {
     }
 
     @Test
+    @Ignore
     public void testUpdateShop(){
         //区域信息不能更改
         Shop shop = new Shop();
@@ -60,5 +61,13 @@ public class ShopDaoTest extends BaseTest {
         shop.setLastEditTime(new Date());
         int effectedNum = shopMapper.updateShop(shop);
         Assert.assertEquals(1,effectedNum);
+    }
+    @Test
+    public  void  testQueryByShopId(){
+        Long l = 1L;
+        Shop s = shopMapper.queryByShopId(1L);
+        System.out.println(s.getShopCategory().getShopCategoryName());
+        System.out.println(s.getArea().getAreaName());
+
     }
 }

@@ -7,6 +7,9 @@ import com.xyd.entity.PersonInfo;
 import com.xyd.entity.Shop;
 import com.xyd.entity.ShopCategory;
 import com.xyd.enums.ShopStateEnum;
+import com.xyd.exceptions.ShopOperationException;
+import com.xyd.mapper.ShopMapper;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -27,7 +30,9 @@ import java.util.List;
 public class ShopServiceTest extends BaseTest {
     @Autowired
     private ShopService shopService;
+
     @Test
+    @Ignore
     public void testAddShop(){
         Shop shop = new Shop();
         PersonInfo owner = new PersonInfo();
@@ -58,4 +63,22 @@ public class ShopServiceTest extends BaseTest {
         ShopExecution execution = shopService.addShop(shop,is,file.getName());
         System.out.println(execution.getState());
     }
+
+
+    @Test
+    public void testModifyShop()throws ShopOperationException,FileNotFoundException {
+        Shop shop = new Shop();
+        shop.setShopName("修改后的店铺名称");
+        shop.setShopId(3L);
+        File file = new File("C:\\Users\\XuYuDong\\Desktop\\kafei.jpg");
+        InputStream is = null;
+        try {
+            is = new FileInputStream(file);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+        ShopExecution execution = shopService.modifyShop(shop,is,file.getName());
+        System.out.println(execution.getShop().getShopImg());
+    }
+
 }

@@ -2,6 +2,7 @@ package com.xyd.service;
 
 import com.xyd.dto.ShopExecution;
 import com.xyd.entity.Shop;
+import com.xyd.exceptions.ShopOperationException;
 
 import java.io.File;
 import java.io.InputStream;
@@ -20,5 +21,21 @@ public interface ShopService {
      * @param shopImgInputSteam shop图片文件流
      * @return
      */
-    ShopExecution addShop(Shop shop, InputStream shopImgInputSteam,String fileName);
+    ShopExecution addShop(Shop shop, InputStream shopImgInputSteam,String fileName)throws ShopOperationException;
+
+    /**
+     * 通过店铺id获取店铺信息
+     * @param shopId
+     * @return
+     */
+    Shop getByShopId(long shopId);
+
+    /**
+     * 跟新店铺信息包括对图片的处理
+     * @param shop
+     * @param shopImgInputStream
+     * @param fileName
+     * @return
+     */
+    ShopExecution modifyShop(Shop shop,InputStream shopImgInputStream,String fileName)throws ShopOperationException;
 }
