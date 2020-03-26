@@ -1,0 +1,16 @@
+2020-03-25 18:04:42.280 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-25 18:04:42.409 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-25 18:04:42.464 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-25 18:05:55.256 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-25 18:05:55.357 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-25 18:05:55.408 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-25 20:20:24.659 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.AreaMapper.queryArea] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-25 20:20:24.661 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-25 20:20:24.678 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-25 20:20:24.920 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-25 20:20:25.003 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-25 20:24:20.650 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.AreaMapper.queryArea] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-25 20:24:20.652 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-25 20:24:20.672 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
+2020-03-25 20:24:20.983 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
+2020-03-25 20:24:21.133 [main] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
