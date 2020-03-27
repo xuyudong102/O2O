@@ -7,15 +7,15 @@ import com.xyd.exceptions.ShopOperationException;
 import com.xyd.mapper.ShopMapper;
 import com.xyd.service.ShopService;
 import com.xyd.utils.ImageUtil;
+import com.xyd.utils.PageCalculator;
 import com.xyd.utils.PathUtil;
-import jdk.internal.util.xml.impl.Input;
-import org.apache.ibatis.jdbc.Null;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.io.InputStream;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author XuYuDong
@@ -112,6 +112,24 @@ public class ShopServiceImpl implements ShopService {
                 throw new ShopOperationException("图片修改失败" + e.getMessage());
             }
         }
+    }
+
+    @Override
+    public ShopExecution getShopList(Shop shopCondition, int pageIndex, int pageSize) {
+        //pageIndex 代表第几页
+        int rowIndex = PageCalculator.calculateRowIndex(pageIndex,pageSize);
+        List<Shop> shopList = shopMapper.queryShopList(shopCondition,rowIndex,pageSize);
+        int count = shopMapper.queryShopCount(shopCondition);
+        ShopExecution se = new ShopExecution();
+        if(shopList!=null){
+            //如果店铺列表不为空
+            //todo 如果没有找到店铺列表 前台怎么知道? 这里不写se.setState吗?
+            se.setShopList(shopList);
+            se.setCount(count);
+        }else{
+            se.setState(ShopStateEnum.INNER_ERROR.getState());
+        }
+        return se;
     }
 
 

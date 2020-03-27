@@ -1,7 +1,10 @@
 package com.xyd.mapper;
 
 import com.xyd.entity.Shop;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author XuYuDong
@@ -30,4 +33,21 @@ public interface ShopMapper {
      * @return
      */
     Shop queryByShopId(long shopId);
+
+    /**
+     * 分页查询店铺列表 可输入:店铺名(模糊),店铺状态,区域id,owner
+     * @param shopCondition 需要查询的店铺类别
+     * @param rowIndex      从第几行开始取
+     * @param pageSize      返回的条数
+     * @return
+     */
+    List<Shop> queryShopList(@Param("shopCondition")Shop shopCondition,
+                             @Param("rowIndex")int rowIndex,@Param("pageSize")int pageSize);
+
+    /**
+     * 查询店铺总数
+     * @param shopCondition 查询信息实体
+     * @return
+     */
+    int queryShopCount(@Param("shopCondition") Shop shopCondition);
 }

@@ -11,7 +11,9 @@ import org.junit.Ignore;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.security.acl.Owner;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author XuYuDong
@@ -63,11 +65,29 @@ public class ShopDaoTest extends BaseTest {
         Assert.assertEquals(1,effectedNum);
     }
     @Test
+    @Ignore
     public  void  testQueryByShopId(){
         long l = 2;
         Shop s = shopMapper.queryByShopId(l);
         System.out.println(s.getShopCategory().getShopCategoryName());
         System.out.println(s.getArea().getAreaName());
+
+    }
+
+    @Test
+    public void testQueryShopList(){
+        Shop shopCondition = new Shop();
+        PersonInfo owner = new PersonInfo();
+        owner.setUserId(1L);
+        shopCondition.setOwner(owner);
+        ShopCategory sc = new ShopCategory();
+        sc.setShopCategoryId(2);
+        shopCondition.setShopCategory(sc);
+        List<Shop> shopList = shopMapper.queryShopList(shopCondition,0,2);
+        System.out.println(shopList.size());
+        System.out.println(shopList.get(0));
+        int count = shopMapper.queryShopCount(shopCondition);
+        System.out.println("店铺总数"+count);
 
     }
 }

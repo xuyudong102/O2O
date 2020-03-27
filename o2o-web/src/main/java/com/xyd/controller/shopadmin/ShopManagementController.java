@@ -18,6 +18,7 @@ import com.xyd.utils.ImageUtil;
 import com.xyd.utils.PathUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -56,7 +57,7 @@ public class ShopManagementController {
     //需要选出parentid 不为空的 一级类别不能做为店铺类别
     @RequestMapping(value = "/getshopinitinfo",method = RequestMethod.GET)
     @ResponseBody
-    public Map<String,Object> getShopInitInfo(){
+    private Map<String,Object> getShopInitInfo(){
         Map<String,Object> modelMap = new HashMap<>();
         List<ShopCategory> shopCategoryList= new ArrayList<>();
         List<Area> areaList = new ArrayList<>();
@@ -276,4 +277,71 @@ public class ShopManagementController {
         return modelMap;
     }
 
+    /**
+     * 用于获取店铺列表
+     * @return
+     */
+    @RequestMapping(value = "/getshoplist",method = RequestMethod.GET)
+    @ResponseBody
+    private Map<String,Object> getShopList(HttpServletRequest request){
+         Map<String,Object> modelMap = new HashMap<>();
+         PersonInfo user = new PersonInfo();
+         user.setUserId(1);
+         user.setName("xuyudong");
+         request.setAttribute("user",user);
+         user = (PersonInfo) request.getAttribute("user");
+         Shop shopCondition = new Shop();
+         shopCondition.setOwner(user);
+         ShopCategory sc = new ShopCategory();
+         sc.setShopCategoryId(2);
+         shopCondition.setShopCategory(sc);
+        List<Shop> shopList = new ArrayList<>();
+        try {
+             ShopExecution se = shopService.getShopList(shopCondition,1,2);
+             shopList= se.getShopList();
+             modelMap.put("shopList",shopList);
+             modelMap.put("user",user);
+             modelMap.put("success",true);
+         }catch (Exception e){
+             modelMap.put("success",false);
+             modelMap.put("errMsg",e.getMessage());
+         }
+         return modelMap;
+    }
+
+    /**
+     * 管理session相关的操作
+     * 第一次访问需要 携带shopId  把shopid存到session中 后面的访问直接从session取就可以
+     * @param request
+     * @return
+     */
+    @RequestMapping(value = "/getshopmanagementinfo",method = RequestMethod.GET)
+    @ResponseBody
+    private Map<String,Object> getShopManagementInfo(HttpServletRequest request) {
+        Map<String, Object> modelMap = new HashMap<>();
+        long shopId = HttpServletRequestUtil.getLong(request, "shopId");
+        if (shopId <= 0) {
+            Object currentShopObj = request.getSession().getAttribute("currentShop");
+            if (currentShopObj == null) {
+                //说明是违规操作 重定向到店铺列表
+                modelMap.put("redirect",true);
+                modelMap.put("url","/o2o/shopadmin/shoplist");
+            } else {
+                //说明不止第一次访问
+                Shop currentShop = (Shop) currentShopObj;
+                //currentShop.setShopId(shopId);
+
+                //不要重定向
+                modelMap.put("redirect",false);
+                modelMap.put("shopId",currentShop.getShopId());
+            }
+        }else{
+            //第一次访问
+            Shop currentShop = new Shop();
+            currentShop.setShopId(shopId);
+            request.getSession().setAttribute("currentShop",currentShop);
+            modelMap.put("redirect",false);
+        }
+        return modelMap;
+    }
 }

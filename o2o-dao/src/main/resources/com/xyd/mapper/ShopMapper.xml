@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8" ?>  
+<?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
- "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
- <!-- namespace指定和哪个Mapper映射器接口对应 -->
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace指定和哪个Mapper映射器接口对应 -->
 <mapper namespace="com.xyd.mapper.ShopMapper">
-	<!-- 定义SQL语句添加商铺-->
+    <!-- 定义SQL语句添加商铺-->
     <!--userGeneratedKeys 获取主键值 插入到参数的实体对象中-->
     <insert id="insertShop" parameterType="com.xyd.entity.Shop" useGeneratedKeys="true"
             keyProperty="shopId" keyColumn="shop_id">
@@ -15,7 +15,7 @@
     <!--更新店铺信息-->
     <!--动态sql语句 如果参数对象有值就更新 没有值就不更新 area 区域id 不能更新 别忘了加,号-->
     <!--通过shopid 查询店铺信息-->
-    <update id="updateShop" parameterType="com.xyd.entity.Shop" >
+    <update id="updateShop" parameterType="com.xyd.entity.Shop">
         update tb_shop
         <set>
             <if test="shopName!=null">shop_name=#{shopName},</if>
@@ -83,5 +83,89 @@
         sc.shop_category_id = s.shop_category_id
         AND
         s.shop_id=#{shopId}
+    </select>
+    <!--根据店铺信息 查询店铺列表-->
+    <!--resultMap shopMap 一样可以在这里用到-->
+    <select id="queryShopList" resultMap="shopMap">
+        SELECT
+        s.shop_id,
+        s.shop_name,
+        s.shop_desc,
+        s.shop_addr,
+        s.phone,
+        s.shop_img,
+        s.priority,
+        s.last_edit_time,
+        s.enable_status,
+        s.advice,
+        sc.shop_category_id,
+        sc.shop_category_name,
+        a.area_id,
+        a.area_name
+        FROM
+        tb_shop s,
+        tb_shop_category sc,
+        tb_area a
+        <where>
+            /*店铺类别*/
+            1=1
+            <if test="shopCondition.shopCategory!=null and shopCondition.shopCategory.shopCategoryId!=null">
+                and s.shop_category_id=#{shopCondition.shopCategory.shopCategoryId}
+            </if>
+            /*店铺区域*/
+            <if test="shopCondition.area!=null and shopCondition.area.areaId!=null">
+                and s.area_id=#{shopCondition.area.areaId}
+            </if>
+            /*店铺名字模糊查询*/
+            <if test="shopCondition.shopName!=null">
+                and s.shop_name like '%${shopCondition.shopName}%'
+            </if>
+            /*店铺状态查询*/
+            <if test="shopCondition.enableStatus!=null">
+                and s.enable_status=#{shopCondition.enableStatus}
+            </if>
+            /*店铺人员信息查询*/
+            <if test="shopCondition.owner!=null and shopCondition.owner.userId !=null">
+                AND s.owner_id=#{shopCondition.owner.userId}
+            </if>
+            AND
+            s.area_id=a.area_id
+            AND
+            s.shop_category_id=sc.shop_category_id
+        </where>
+        ORDER BY
+            s.priority desc
+        LIMIT
+            #{rowIndex},#{pageSize}
+    </select>
+    <!--查询shop商铺的总数-->
+    <select id="queryShopCount" resultType="int">
+        SELECT
+            count(*)
+        FROM
+        tb_shop s
+        <where>
+            1=1
+            /*店铺类别*/
+            <if test="shopCondition.shopCategory!=null and shopCondition.shopCategory.shopCategoryId!=null">
+                AND s.shop_category_id=#{shopCondition.shopCategory.shopCategoryId}
+            </if>
+            /*店铺区域*/
+            <if test="shopCondition.area!=null and shopCondition.area.areaId!=null">
+                AND s.area_id=#{shopCondition.area.areaId}
+            </if>
+            /*店铺名字模糊查询*/
+            <if test="shopCondition.shopName!=null">
+                AND s.shop_name like '%${shopCondition.shopName}%'
+            </if>
+            /*店铺状态查询*/
+            <if test="shopCondition.enableStatus!=null">
+                AND s.enable_status=#{shopCondition.enableStatus}
+            </if>
+            /*店铺人员信息查询*/
+            <if test="shopCondition.owner!=null and shopCondition.owner.userId !=null">
+                AND s.owner_id=#{shopCondition.owner.userId}
+            </if>
+        </where>
     </select>
 </mapper>
