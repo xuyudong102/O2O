@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- namespace指定和哪个Mapper映射器接口对应 -->
+<mapper namespace="com.xyd.mapper.ProductCategoryMapper">
+	<!-- 定义SQL语句查询店铺产品类别信息-->
+    <select id="queryProductCategoryByShopId" parameterType="long" resultType="com.xyd.entity.ProductCategory" >
+        select product_category_id,product_category_name,priority,create_time,shop_id
+        from tb_product_category
+        where shop_id=#{shopId}
+        order by priority desc
+    </select>
+
+    <!--批量增加商品类别-->
+    <insert id="batchInsertProductCategory" parameterType="java.util.List" >
+        INSERT INTO
+        tb_product_category(product_category_name,priority,create_time,shop_id)
+        VALUES
+        <foreach collection="list" item="productCategory" index="index" separator=",">
+            (
+                #{productCategory.productCategoryName},
+                #{productCategory.priority},
+                #{productCategory.createTime},
+                #{productCategory.shopId}
+            )
+        </foreach>
+    </insert>
+
+    <!--商品类别删除-->
+    <delete id="deleteProductCategory" >
+        DELETE FROM
+        tb_product_category
+        WHERE
+        product_category_id=#{productCategoryId}
+        AND shop_id=#{shopId}
+    </delete>
+</mapper>

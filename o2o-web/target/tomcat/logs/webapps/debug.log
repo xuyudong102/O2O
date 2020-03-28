@@ -1,110 +1,175 @@
-2020-03-28 00:06:14.369 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:06:14.372 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:06:14.402 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE /*店铺类别*/ 1=1 and s.shop_category_id=? /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority desc LIMIT ?,? 
-2020-03-28 00:06:14.633 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==> Parameters: 2(Long), 1(Long), 0(Integer), 2(Integer)
-2020-03-28 00:06:14.714 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryShopList - <==      Total: 2
-2020-03-28 00:06:14.729 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopCount] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:06:14.729 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:06:14.732 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==>  Preparing: SELECT count(*) FROM tb_shop s WHERE 1=1 /*店铺类别*/ AND s.shop_category_id=? /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? 
-2020-03-28 00:06:14.737 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==> Parameters: 2(Long), 1(Long)
-2020-03-28 00:06:14.739 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - <==      Total: 1
-2020-03-28 00:06:24.517 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:06:24.519 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:06:24.520 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE /*店铺类别*/ 1=1 and s.shop_category_id=? /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority desc LIMIT ?,? 
-2020-03-28 00:06:24.521 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==> Parameters: 2(Long), 1(Long), 0(Integer), 2(Integer)
-2020-03-28 00:06:24.530 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryShopList - <==      Total: 2
-2020-03-28 00:06:24.531 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopCount] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:06:24.532 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:06:24.533 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==>  Preparing: SELECT count(*) FROM tb_shop s WHERE 1=1 /*店铺类别*/ AND s.shop_category_id=? /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? 
-2020-03-28 00:06:24.534 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==> Parameters: 2(Long), 1(Long)
-2020-03-28 00:06:24.537 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - <==      Total: 1
-2020-03-28 00:08:15.007 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:08:15.022 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:08:15.024 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE /*店铺类别*/ 1=1 and s.shop_category_id=? /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority desc LIMIT ?,? 
-2020-03-28 00:08:15.025 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==> Parameters: 2(Long), 1(Long), 0(Integer), 2(Integer)
-2020-03-28 00:08:15.030 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopList - <==      Total: 2
-2020-03-28 00:08:15.031 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopCount] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:08:15.031 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:08:15.035 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==>  Preparing: SELECT count(*) FROM tb_shop s WHERE 1=1 /*店铺类别*/ AND s.shop_category_id=? /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? 
-2020-03-28 00:08:15.036 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==> Parameters: 2(Long), 1(Long)
-2020-03-28 00:08:15.038 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - <==      Total: 1
-2020-03-28 00:09:18.370 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:09:18.370 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:09:18.371 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE /*店铺类别*/ 1=1 and s.shop_category_id=? /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority desc LIMIT ?,? 
-2020-03-28 00:09:18.371 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==> Parameters: 2(Long), 1(Long), 0(Integer), 2(Integer)
-2020-03-28 00:09:18.376 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopList - <==      Total: 2
-2020-03-28 00:09:18.380 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopCount] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:09:18.380 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:09:18.381 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==>  Preparing: SELECT count(*) FROM tb_shop s WHERE 1=1 /*店铺类别*/ AND s.shop_category_id=? /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? 
-2020-03-28 00:09:18.382 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==> Parameters: 2(Long), 1(Long)
-2020-03-28 00:09:18.384 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - <==      Total: 1
-2020-03-28 00:09:21.585 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:09:21.586 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:09:21.586 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
-2020-03-28 00:09:21.587 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
-2020-03-28 00:09:21.597 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
-2020-03-28 00:09:21.597 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.AreaMapper.queryArea] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:09:21.598 [http-bio-8888-exec-4] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:09:21.598 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
-2020-03-28 00:09:21.598 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
-2020-03-28 00:09:21.601 [http-bio-8888-exec-4] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
-2020-03-28 00:10:13.920 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:10:13.920 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:10:13.921 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
-2020-03-28 00:10:13.922 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
-2020-03-28 00:10:13.935 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
-2020-03-28 00:10:13.939 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.AreaMapper.queryArea] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:10:13.939 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:10:13.939 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
-2020-03-28 00:10:13.946 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
-2020-03-28 00:10:13.950 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
-2020-03-28 00:10:17.609 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:10:17.610 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:10:17.610 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
-2020-03-28 00:10:17.610 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
-2020-03-28 00:10:17.614 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
-2020-03-28 00:10:17.614 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.AreaMapper.queryArea] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:10:17.615 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:10:17.615 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
-2020-03-28 00:10:17.615 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
-2020-03-28 00:10:17.618 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
-2020-03-28 00:14:47.167 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:14:47.174 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:14:47.225 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE /*店铺类别*/ 1=1 and s.shop_category_id=? /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority desc LIMIT ?,? 
-2020-03-28 00:14:47.503 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==> Parameters: 2(Long), 1(Long), 0(Integer), 2(Integer)
-2020-03-28 00:14:47.565 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryShopList - <==      Total: 2
-2020-03-28 00:14:47.576 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopCount] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:14:47.576 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:14:47.579 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==>  Preparing: SELECT count(*) FROM tb_shop s WHERE 1=1 /*店铺类别*/ AND s.shop_category_id=? /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? 
-2020-03-28 00:14:47.580 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==> Parameters: 2(Long), 1(Long)
-2020-03-28 00:14:47.582 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - <==      Total: 1
-2020-03-28 00:14:53.284 [http-bio-8888-exec-6] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:14:53.285 [http-bio-8888-exec-6] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:14:53.285 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
-2020-03-28 00:14:53.286 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
-2020-03-28 00:14:53.294 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
-2020-03-28 00:14:53.299 [http-bio-8888-exec-6] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.AreaMapper.queryArea] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:14:53.300 [http-bio-8888-exec-6] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:14:53.300 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
-2020-03-28 00:14:53.301 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
-2020-03-28 00:14:53.305 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
-2020-03-28 00:15:00.438 [http-bio-8888-exec-3] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:15:00.438 [http-bio-8888-exec-3] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:15:00.439 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
-2020-03-28 00:15:00.441 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
-2020-03-28 00:15:00.446 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
-2020-03-28 00:15:00.447 [http-bio-8888-exec-3] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.AreaMapper.queryArea] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:15:00.447 [http-bio-8888-exec-3] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:15:00.447 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
-2020-03-28 00:15:00.448 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
-2020-03-28 00:15:00.450 [http-bio-8888-exec-3] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
-2020-03-28 00:16:02.475 [http-bio-8888-exec-6] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:16:02.476 [http-bio-8888-exec-6] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:16:02.476 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
-2020-03-28 00:16:02.477 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
-2020-03-28 00:16:02.482 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
-2020-03-28 00:16:02.487 [http-bio-8888-exec-6] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.AreaMapper.queryArea] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 00:16:02.488 [http-bio-8888-exec-6] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 00:16:02.490 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==>  Preparing: select * from tb_area order by priority desc 
-2020-03-28 00:16:02.493 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.AreaMapper.queryArea - ==> Parameters: 
-2020-03-28 00:16:02.496 [http-bio-8888-exec-6] DEBUG com.xyd.mapper.AreaMapper.queryArea - <==      Total: 2
+2020-03-29 00:05:14.040 [http-bio-8888-exec-9] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:05:14.066 [http-bio-8888-exec-9] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:05:14.101 [http-bio-8888-exec-9] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:05:14.415 [http-bio-8888-exec-9] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:05:14.483 [http-bio-8888-exec-9] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:05:14.515 [http-bio-8888-exec-9] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:05:14.515 [http-bio-8888-exec-9] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:05:14.516 [http-bio-8888-exec-9] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:05:14.516 [http-bio-8888-exec-9] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:05:14.522 [http-bio-8888-exec-9] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 5
+2020-03-29 00:08:28.728 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:08:28.739 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:08:28.866 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:08:29.547 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:08:29.614 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:08:29.635 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:08:29.635 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:08:29.635 [http-bio-8888-exec-10] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:08:29.636 [http-bio-8888-exec-10] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:08:29.641 [http-bio-8888-exec-10] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 5
+2020-03-29 00:09:03.035 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:09:03.035 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:09:03.036 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:09:03.036 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:09:03.041 [http-bio-8888-exec-10] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:09:03.045 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:09:03.045 [http-bio-8888-exec-10] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:09:03.045 [http-bio-8888-exec-10] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:09:03.047 [http-bio-8888-exec-10] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:09:03.051 [http-bio-8888-exec-10] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 5
+2020-03-29 00:09:45.018 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:09:45.019 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:09:45.020 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:09:45.020 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:09:45.023 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:09:45.024 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:09:45.025 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:09:45.025 [http-bio-8888-exec-7] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:09:45.025 [http-bio-8888-exec-7] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:09:45.031 [http-bio-8888-exec-7] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 5
+2020-03-29 00:09:53.621 [http-bio-8888-exec-2] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:09:53.622 [http-bio-8888-exec-2] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:09:53.622 [http-bio-8888-exec-2] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:09:53.623 [http-bio-8888-exec-2] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:09:53.666 [http-bio-8888-exec-2] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:09:53.666 [http-bio-8888-exec-2] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:09:53.667 [http-bio-8888-exec-2] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:09:53.667 [http-bio-8888-exec-2] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:09:53.668 [http-bio-8888-exec-2] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:09:53.673 [http-bio-8888-exec-2] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 5
+2020-03-29 00:11:53.402 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:11:53.402 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:11:53.403 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:11:53.404 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:11:53.408 [http-bio-8888-exec-7] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:11:53.408 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:11:53.409 [http-bio-8888-exec-7] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:11:53.409 [http-bio-8888-exec-7] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:11:53.410 [http-bio-8888-exec-7] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:11:53.421 [http-bio-8888-exec-7] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 5
+2020-03-29 00:14:28.913 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:14:28.950 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:14:29.073 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:14:29.536 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:14:29.609 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:14:29.648 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:14:29.648 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:14:29.649 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:14:29.650 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:14:29.654 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 5
+2020-03-29 00:15:51.590 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.deleteProductCategory] user[master] Stretegy,SqlCommanType[DELETE]..
+2020-03-29 00:15:51.591 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
+2020-03-29 00:15:51.592 [http-bio-8888-exec-8] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id=? AND shop_id=? 
+2020-03-29 00:15:51.602 [http-bio-8888-exec-8] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==> Parameters: 15(Long), 2(Long)
+2020-03-29 00:15:51.616 [http-bio-8888-exec-8] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - <==    Updates: 1
+2020-03-29 00:16:00.274 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:16:00.274 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:16:00.275 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:16:00.276 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:16:00.284 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:16:00.286 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:16:00.287 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:16:00.288 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:16:00.289 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:16:00.295 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 4
+2020-03-29 00:17:56.611 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:17:56.612 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:17:56.612 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:17:56.613 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:17:56.617 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:17:56.618 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:17:56.618 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:17:56.618 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:17:56.619 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:17:56.624 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 4
+2020-03-29 00:19:09.655 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.deleteProductCategory] user[master] Stretegy,SqlCommanType[DELETE]..
+2020-03-29 00:19:09.656 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
+2020-03-29 00:19:09.659 [http-bio-8888-exec-5] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id=? AND shop_id=? 
+2020-03-29 00:19:09.675 [http-bio-8888-exec-5] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==> Parameters: 14(Long), 2(Long)
+2020-03-29 00:19:09.691 [http-bio-8888-exec-5] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - <==    Updates: 1
+2020-03-29 00:19:37.474 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:19:37.474 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:19:37.475 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:19:37.475 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:19:37.478 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:19:37.482 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:19:37.482 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:19:37.484 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:19:37.486 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:19:37.493 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 3
+2020-03-29 00:20:06.254 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:20:06.255 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:20:06.255 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:20:06.256 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:20:06.260 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:20:06.261 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:20:06.261 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:20:06.261 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:20:06.262 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:20:06.265 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 3
+2020-03-29 00:24:48.761 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:24:48.761 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:24:48.761 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:24:48.762 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:24:48.765 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:24:48.766 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:24:48.766 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:24:48.766 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:24:48.769 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:24:48.772 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 3
+2020-03-29 00:25:28.522 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:25:28.530 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:25:28.636 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:25:29.198 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:25:29.285 [http-bio-8888-exec-8] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:25:29.340 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:25:29.341 [http-bio-8888-exec-8] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:25:29.343 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:25:29.345 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:25:29.349 [http-bio-8888-exec-8] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 3
+2020-03-29 00:25:30.017 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:25:30.018 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:25:30.018 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:25:30.019 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:25:30.023 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:25:30.026 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:25:30.026 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:25:30.026 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:25:30.027 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:25:30.033 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 3
+2020-03-29 00:25:43.456 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.deleteProductCategory] user[master] Stretegy,SqlCommanType[DELETE]..
+2020-03-29 00:25:43.456 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
+2020-03-29 00:25:43.458 [http-bio-8888-exec-5] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id=? AND shop_id=? 
+2020-03-29 00:25:43.460 [http-bio-8888-exec-5] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==> Parameters: 1(Long), 2(Long)
+2020-03-29 00:25:43.469 [http-bio-8888-exec-5] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - <==    Updates: 1
+2020-03-29 00:25:43.500 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:25:43.500 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:25:43.501 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:25:43.501 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:25:43.505 [http-bio-8888-exec-5] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:25:43.506 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:25:43.506 [http-bio-8888-exec-5] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:25:43.507 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:25:43.507 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:25:43.511 [http-bio-8888-exec-5] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 2
+2020-03-29 00:32:02.879 [http-bio-8888-exec-1] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:32:02.880 [http-bio-8888-exec-1] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:32:02.881 [http-bio-8888-exec-1] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE a.area_id=s.area_id AND sc.shop_category_id = s.shop_category_id AND s.shop_id=? 
+2020-03-29 00:32:02.882 [http-bio-8888-exec-1] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:32:02.892 [http-bio-8888-exec-1] DEBUG com.xyd.mapper.ShopMapper.queryByShopId - <==      Total: 1
+2020-03-29 00:32:02.894 [http-bio-8888-exec-1] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-03-29 00:32:02.894 [http-bio-8888-exec-1] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-03-29 00:32:02.894 [http-bio-8888-exec-1] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
+2020-03-29 00:32:02.895 [http-bio-8888-exec-1] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
+2020-03-29 00:32:02.898 [http-bio-8888-exec-1] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 2

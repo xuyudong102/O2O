@@ -1,4 +1,5 @@
 com\xyd\utils\ImageUtil.class
+com\xyd\exceptions\ProductCategoryOperationException.class
 com\xyd\utils\PageCalculator.class
 com\xyd\exceptions\ShopOperationException.class
 com\xyd\utils\CodeUtil.class
