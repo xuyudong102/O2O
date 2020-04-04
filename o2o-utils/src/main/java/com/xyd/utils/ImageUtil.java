@@ -94,6 +94,45 @@ public class ImageUtil {
         return relativeAddr;
     }
 
+    /**
+     *处理详情图 并返回目标图片的相对值路径
+     * @param shopImgInputSteam 上传图片的文件流
+     * @param targetAddr 新图片目标文件地址
+     * @param fileName 传入文件名
+     * @return 返回值不包含图片的基础路径  文件相对路径
+     */
+    //处理详情图
+    public static String generateNormalImg(InputStream shopImgInputSteam,String targetAddr,String fileName){
+        //获取新文件的随机名 和 拓展名
+        String realFileName = getRandomFileName();
+        String extension = getFileExtension(fileName);
+        //创建 文件目标文件夹
+        makeDirPath(targetAddr);
+        //新文件地址:
+        String relativeAddr = targetAddr +realFileName+extension;
+        //将图片的相对路径输出到日志中
+        System.out.println("水印文件路径为:"+basePath+"watermark.jpg");
+        logger.debug("current realtiveAddr is"+relativeAddr);
+        //创建新的图片 基础图片路径+图片目标路径+随机生成图片名
+        File dest = new File(PathUtil.getImgBasePath()+relativeAddr);
+        //将图片的全部路径输出到日志文件
+        logger.debug("current completeAddr is"+PathUtil.getImgBasePath()+relativeAddr);
+        try {
+            Thumbnails.of(shopImgInputSteam).size(337,640).watermark(Positions.BOTTOM_RIGHT,ImageIO.read(new File(basePath+"watermark.jpg")),0.25f)
+                    .outputQuality(0.9f).toFile(dest);
+
+        }catch (IOException e){
+            //如果生成失败了 向日志中打印错误信息
+            logger.error(e.toString());
+            //向控制台输出错误信息
+            e.printStackTrace();
+        }
+        //返回值不包含图片的基础路径
+        return relativeAddr;
+    }
+
+
+
     public static void main(String[] args) throws IOException {
         //参数1:文件路径 size->图片大小 watermark水印图片的位置和图片路径和透明度     outputQuality->图片压缩一下
         try {

@@ -1,5 +1,6 @@
 package com.xyd.service.impl;
 
+import com.xyd.dto.ImageHolder;
 import com.xyd.dto.ShopExecution;
 import com.xyd.entity.Shop;
 import com.xyd.enums.ShopStateEnum;
@@ -33,7 +34,7 @@ public class ShopServiceImpl implements ShopService {
     @Override
     @Transactional
     //因为只有runtimeexception 才能支持事务
-    public ShopExecution addShop(Shop shop, InputStream shopImgInputSteam, String fileName) {
+    public ShopExecution addShop(Shop shop, ImageHolder thumbnail) {
         //空值判断
         if (shop == null) {
             //如果shop为空直接返回
@@ -51,10 +52,10 @@ public class ShopServiceImpl implements ShopService {
                 throw new ShopOperationException("店铺创建失败 数据库插入失败");
             } else {
                 //添加成功
-                if (shopImgInputSteam != null) {
+                if (thumbnail.getImage() != null) {
                     //本地存储图片
                     try {
-                        addShopImg(shop, shopImgInputSteam, fileName);
+                        addShopImg(shop, thumbnail);
                     } catch (Exception e) {
                         throw new ShopOperationException("本地图片存储失败" + e.getMessage());
                     }
@@ -79,7 +80,7 @@ public class ShopServiceImpl implements ShopService {
     }
 
     @Override
-    public ShopExecution modifyShop(Shop shop, InputStream shopImgInputStream, String fileName) throws ShopOperationException {
+    public ShopExecution modifyShop(Shop shop, ImageHolder thumbnail) throws ShopOperationException {
         //判断是否需要处理图片
         if (shop == null || shop.getShopId() == null) {
             //直接返回错误信息
@@ -87,7 +88,7 @@ public class ShopServiceImpl implements ShopService {
         } else {
             try {
                 //如果不为空 判断是否有文件流 或者 (流文件的文件名)
-                if (shopImgInputStream != null && fileName != null && !"".equals(fileName)) {
+                if (thumbnail.getImage() != null && thumbnail.getImageName() != null && !"".equals(thumbnail.getImageName())) {
                     Shop tempShop = shopMapper.queryByShopId(shop.getShopId());
                     //如果都有的话
                     if (tempShop.getShopImg() != null) {
@@ -95,7 +96,7 @@ public class ShopServiceImpl implements ShopService {
                         ImageUtil.deleteFileOrPath(tempShop.getShopImg());
                     }
                     //传入的是文件流的名字  再向本地添加文件返回图片相对路径
-                    addShopImg(shop, shopImgInputStream, fileName);
+                    addShopImg(shop, thumbnail);
                 }
                 //文件操作成功后 向数据库添加其他数据
                 shop.setLastEditTime(new Date());
@@ -133,10 +134,10 @@ public class ShopServiceImpl implements ShopService {
     }
 
 
-    public void addShopImg(Shop shop, InputStream shopImgInputSteam, String fileName) {
+    public void addShopImg(Shop shop, ImageHolder thumbnail) {
         //根据商店id 获得路径  创建本地图片文件
         String target = PathUtil.getShopImgPath(shop.getShopId());
-        String shopImgAddr = ImageUtil.generateThumbnail(shopImgInputSteam, target, fileName);
+        String shopImgAddr = ImageUtil.generateThumbnail(thumbnail.getImage() , target,thumbnail.getImageName());
         shop.setShopImg(shopImgAddr);
     }
 

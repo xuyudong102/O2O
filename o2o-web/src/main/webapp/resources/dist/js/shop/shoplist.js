@@ -29,7 +29,7 @@ $(function () {
     function handleList(data) {
         var tempHtml = "";
         data.map(function (item,index) {
-            tempHtml+='<div class="row row-shop"><div class="col-40">'+item.shopName+'</div>' +
+            tempHtml+='<div class="row row-shop"><div class="col-40" >'+item.shopName+'</div>' +
                 '<div class="col-40">'+goEnableStatus(item.enableStatus)+'</div>'+
                 '<div class="col-20">'+goShop(item.enableStatus,item.shopId)+'</div></div>';
         })
@@ -51,7 +51,7 @@ $(function () {
     function goShop(status,id) {
         if(status==1){
             //如果是可用状态
-            return '<a href="/o2o/shopadmin/shopmanagement?shopId='+id+'">进入</a>';
+            return '<a  href="/o2o/shopadmin/shopmanagement?shopId='+id+'">进入</a>';
         }else{
             return '';
         }

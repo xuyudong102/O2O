@@ -1,6 +1,7 @@
 package com.xyd.service;
 
 import com.xyd.BaseTest;
+import com.xyd.dto.ImageHolder;
 import com.xyd.dto.ShopExecution;
 import com.xyd.entity.Area;
 import com.xyd.entity.PersonInfo;
@@ -60,7 +61,8 @@ public class ShopServiceTest extends BaseTest {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        ShopExecution execution = shopService.addShop(shop,is,file.getName());
+        ImageHolder imageHolder = new ImageHolder(is,file.getName());
+        ShopExecution execution = shopService.addShop(shop,imageHolder);
         System.out.println(execution.getState());
     }
 
@@ -78,7 +80,8 @@ public class ShopServiceTest extends BaseTest {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-        ShopExecution execution = shopService.modifyShop(shop,is,file.getName());
+        ImageHolder imageHolder = new ImageHolder(is,file.getName());
+        ShopExecution execution = shopService.modifyShop(shop,imageHolder);
         System.out.println(execution.getShop().getShopImg());
     }
 

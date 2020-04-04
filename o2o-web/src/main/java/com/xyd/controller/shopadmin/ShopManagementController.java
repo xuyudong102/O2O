@@ -1,6 +1,7 @@
 package com.xyd.controller.shopadmin;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.xyd.dto.ImageHolder;
 import com.xyd.dto.ProductCategoryExecution;
 import com.xyd.dto.ShopExecution;
 import com.xyd.entity.*;
@@ -126,7 +127,8 @@ public class ShopManagementController {
             shop.setOwner(owner);
             ShopExecution se = null;
             try {
-                se = shopService.addShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                ImageHolder imageHolder = new ImageHolder(shopImg.getInputStream(),shopImg.getOriginalFilename());
+                se = shopService.addShop(shop, imageHolder);
                 if (se.getState() == ShopStateEnum.CHECK.getState()) {
                     //成功
                     modelMap.put("success", true);
@@ -210,10 +212,11 @@ public class ShopManagementController {
 
             ShopExecution se = null;
             try {
+                ImageHolder imageHolder = new ImageHolder(shopImg.getInputStream(),shopImg.getOriginalFilename());
                 if (shopImg == null) {
-                    se = shopService.modifyShop(shop, null, null);
+                    se = shopService.modifyShop(shop, null);
                 } else {
-                    se = shopService.modifyShop(shop, shopImg.getInputStream(), shopImg.getOriginalFilename());
+                    se = shopService.modifyShop(shop, imageHolder);
                 }
 
                 if (se.getState() == ShopStateEnum.SUCCESS.getState()) {
@@ -348,9 +351,17 @@ public class ShopManagementController {
     @ResponseBody
     public Map<String, Object> getProductCategory(HttpServletRequest request) {
         Map<String, Object> modelMap = new HashMap<>();
-        long shopId = HttpServletRequestUtil.getLong(request, "shopId");
+        //long shopId = HttpServletRequestUtil.getLong(request, "shopId");
+        //应该从session中取
+        Shop currentShop = (Shop) request.getSession().getAttribute("currentShop");
+        if(currentShop==null){
+            //就说明 session中 没有这个数据 直接返回false
+            modelMap.put("success", false);
+            return modelMap;
+        }
+        long shopId = currentShop.getShopId();
         //把shop信息存到session中去
-        Shop currentShop = shopService.getByShopId(shopId);
+         currentShop = shopService.getByShopId(shopId);
         if(currentShop!=null&&currentShop.getShopId()>=0){
             //存到session中去
             request.getSession().setAttribute("currentShop",currentShop);

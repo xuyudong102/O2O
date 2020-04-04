@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- namespace指定和哪个Mapper映射器接口对应 -->
+<mapper namespace="com.xyd.mapper.ProductImgMapper">
+    <!--批量增加商品图片-->
+    <insert id="batchInsertProductImg" parameterType="java.util.List" >
+        INSERT INTO
+        tb_product_img(img_addr,img_desc,priority,create_time,product_id)
+        VALUES
+        <foreach collection="list" item="productImg" index="index" separator=",">
+            (
+                #{productImg.imgAddr},
+                #{productImg.imgDesc},
+                #{productImg.priority},
+                #{productImg.createTime},
+                #{productImg.productId}
+            )
+        </foreach>
+    </insert>
+
+    <resultMap id="productImgMap" type="com.xyd.entity.ProductImg">
+        <id property="productImgId" column="product_img_id"/>
+        <result column="img_addr" property="imgAddr"/>
+        <result column="img_desc" property="imgDesc"/>
+        <result column="priority" property="priority"/>
+        <result column="create_time" property="createTime"/>
+        <result column="product_id" property="productId"/>
+    </resultMap>
+
+    <!--根据店铺id查询所有详情图片组成的集合 -->
+    <select id="queryProductImgByProductId" parameterType="long" resultMap="productImgMap">
+        SELECT
+        pm.product_img_id,
+        img_addr,
+        img_desc,
+        priority,
+        create_time,
+        product_id
+        FROM
+        tb_product_img pm
+        WHERE
+        pm.product_id=#{productId}
+    </select>
+
+    <!--根据商品id删除商品详情图片-->
+    <delete id="deleteProductImgByProductId" parameterType="long">
+        DELETE
+        FROM
+        tb_product_img
+        WHERE
+        product_id=#{productId}
+    </delete>
+
+</mapper>

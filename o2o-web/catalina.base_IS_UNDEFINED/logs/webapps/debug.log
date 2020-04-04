@@ -1,66 +1,71 @@
-2020-03-28 10:20:23.808 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 10:20:23.823 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 10:20:23.848 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
-2020-03-28 10:20:24.194 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
-2020-03-28 10:20:24.245 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 3
-2020-03-28 10:35:37.746 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 10:35:37.749 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 10:35:37.780 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
-2020-03-28 10:35:38.178 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
-2020-03-28 10:35:38.240 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 3
-2020-03-28 15:58:36.234 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.batchInsertProductCategory] user[master] Stretegy,SqlCommanType[INSERT]..
-2020-03-28 15:58:36.238 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
-2020-03-28 15:58:36.379 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category(product_category_name,priority,create_time,shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-28 15:58:36.501 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==> Parameters: 商品类别2(String), 2(Integer), 2020-03-28 15:58:36.191(Timestamp), 2(Long), null, null, null, 0(Long)
-2020-03-28 15:58:58.820 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.batchInsertProductCategory] user[master] Stretegy,SqlCommanType[INSERT]..
-2020-03-28 15:58:58.822 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
-2020-03-28 15:58:58.881 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category(product_category_name,priority,create_time,shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-28 15:58:58.946 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==> Parameters: 商品类别2(String), 2(Integer), 2020-03-28 15:58:58.796(Timestamp), 2(Long), null, null, null, 0(Long)
-2020-03-28 16:08:12.450 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.batchInsertProductCategory] user[master] Stretegy,SqlCommanType[INSERT]..
-2020-03-28 16:08:12.458 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
-2020-03-28 16:08:12.721 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category(product_category_name,priority,create_time,shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-28 16:08:13.025 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==> Parameters: 商品类别2(String), 2(Integer), 2020-03-28 16:07:37.792(Timestamp), 2(Long), null, null, null, 0(Long)
-2020-03-28 16:27:20.921 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.batchInsertProductCategory] user[master] Stretegy,SqlCommanType[INSERT]..
-2020-03-28 16:27:20.924 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
-2020-03-28 16:27:21.016 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category(product_category_name,priority,create_time,shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-28 16:27:21.089 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==> Parameters: 商品类别2(String), 2(Integer), 2020-03-28 16:27:20.891(Timestamp), 2(Long), null, null, null, 0(Long)
-2020-03-28 16:28:32.010 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.batchInsertProductCategory] user[master] Stretegy,SqlCommanType[INSERT]..
-2020-03-28 16:28:32.015 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
-2020-03-28 16:28:32.073 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category(product_category_name,priority,create_time,shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-28 16:28:32.141 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==> Parameters: 商品类别1(String), 1(Integer), 2020-03-28 16:28:31.982(Timestamp), 2(Long), 商品类别2(String), 2(Integer), 2020-03-28 16:28:31.982(Timestamp), 2(Long)
-2020-03-28 16:28:32.163 [main] DEBUG c.x.m.P.batchInsertProductCategory - <==    Updates: 2
-2020-03-28 23:21:17.121 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.batchInsertProductCategory] user[master] Stretegy,SqlCommanType[INSERT]..
-2020-03-28 23:21:17.123 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
-2020-03-28 23:21:17.203 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==>  Preparing: INSERT INTO tb_product_category(product_category_name,priority,create_time,shop_id) VALUES ( ?, ?, ?, ? ) , ( ?, ?, ?, ? ) 
-2020-03-28 23:21:17.371 [main] DEBUG c.x.m.P.batchInsertProductCategory - ==> Parameters: 商品类别1(String), 1(Integer), 2020-03-28 23:21:17.102(Timestamp), 2(Long), 商品类别2(String), 2(Integer), 2020-03-28 23:21:17.102(Timestamp), 2(Long)
-2020-03-28 23:21:17.387 [main] DEBUG c.x.m.P.batchInsertProductCategory - <==    Updates: 2
-2020-03-28 23:21:17.432 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 23:21:17.433 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 23:21:17.435 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
-2020-03-28 23:21:17.535 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
-2020-03-28 23:21:17.559 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 9
-2020-03-28 23:21:17.574 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-03-28 23:21:17.575 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-03-28 23:21:17.575 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - ==>  Preparing: select product_category_id,product_category_name,priority,create_time,shop_id from tb_product_category where shop_id=? order by priority desc 
-2020-03-28 23:21:17.576 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - ==> Parameters: 2(Long)
-2020-03-28 23:21:17.587 [main] DEBUG c.x.m.P.queryProductCategoryByShopId - <==      Total: 9
-2020-03-28 23:21:17.588 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.deleteProductCategory] user[master] Stretegy,SqlCommanType[DELETE]..
-2020-03-28 23:21:17.588 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
-2020-03-28 23:21:17.588 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id=? AND shop_id=? 
-2020-03-28 23:21:17.589 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==> Parameters: 13(Long), 2(Long)
-2020-03-28 23:21:17.617 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - <==    Updates: 1
-2020-03-28 23:21:17.618 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.deleteProductCategory] user[master] Stretegy,SqlCommanType[DELETE]..
-2020-03-28 23:21:17.618 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
-2020-03-28 23:21:17.618 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id=? AND shop_id=? 
-2020-03-28 23:21:17.620 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==> Parameters: 17(Long), 2(Long)
-2020-03-28 23:21:17.800 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - <==    Updates: 1
-2020-03-28 23:21:17.801 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.deleteProductCategory] user[master] Stretegy,SqlCommanType[DELETE]..
-2020-03-28 23:21:17.801 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
-2020-03-28 23:21:17.801 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id=? AND shop_id=? 
-2020-03-28 23:21:17.802 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==> Parameters: 12(Long), 2(Long)
-2020-03-28 23:21:17.840 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - <==    Updates: 1
-2020-03-28 23:21:17.842 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductCategoryMapper.deleteProductCategory] user[master] Stretegy,SqlCommanType[DELETE]..
-2020-03-28 23:21:17.843 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
-2020-03-28 23:21:17.843 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==>  Preparing: DELETE FROM tb_product_category WHERE product_category_id=? AND shop_id=? 
-2020-03-28 23:21:17.844 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - ==> Parameters: 16(Long), 2(Long)
-2020-03-28 23:21:17.866 [main] DEBUG c.x.m.ProductCategoryMapper.deleteProductCategory - <==    Updates: 1
+2020-04-04 11:37:24.645 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductImgMapper.queryProductImgByProductId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-04 11:37:24.675 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-04-04 11:37:24.708 [main] DEBUG c.x.m.ProductImgMapper.queryProductImgByProductId - ==>  Preparing: SELECT pm.product_img_id, img_addr, img_desc, priority, create_time, product_id FROM tb_product_img pm WHERE pm.product_id=? 
+2020-04-04 11:37:24.937 [main] DEBUG c.x.m.ProductImgMapper.queryProductImgByProductId - ==> Parameters: 10(Long)
+2020-04-04 11:37:24.984 [main] DEBUG c.x.m.ProductImgMapper.queryProductImgByProductId - <==      Total: 2
+2020-04-04 12:34:21.232 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductMapper.queryProductById] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-04 12:34:21.235 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-04-04 12:34:21.275 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductById - ==>  Preparing: SELECT p.product_id, p.product_name, p.product_desc, p.img_addr, p.normal_price, p.promotion_price, p.priority, p.create_time, p.last_edit_time, p.enable_status, p.product_category_id, p.shop_id, pm.product_img_id, pm.img_addr, pm.img_desc, pm.priority, pm.create_time FROM tb_product p LEFT JOIN tb_product_img pm ON p.product_id=pm.product_id WHERE p.product_id = ? ORDER BY pm.priority DESC 
+2020-04-04 12:34:21.502 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductById - ==> Parameters: 10(Long)
+2020-04-04 12:34:21.546 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductById - <==      Total: 2
+2020-04-04 12:34:21.573 [main] DEBUG com.xyd.utils.ImageUtil - current realtiveAddr isupload\item\shop\2\2020-04-04-12-34-21-35798.jpg
+2020-04-04 12:34:21.573 [main] DEBUG com.xyd.utils.ImageUtil - current completeAddr isC:\projectdev\image\upload\item\shop\2\2020-04-04-12-34-21-35798.jpg
+2020-04-04 12:34:21.872 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductImgMapper.queryProductImgByProductId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-04 12:34:21.872 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-04-04 12:34:21.873 [main] DEBUG c.x.m.ProductImgMapper.queryProductImgByProductId - ==>  Preparing: SELECT pm.product_img_id, img_addr, img_desc, priority, create_time, product_id FROM tb_product_img pm WHERE pm.product_id=? 
+2020-04-04 12:34:21.874 [main] DEBUG c.x.m.ProductImgMapper.queryProductImgByProductId - ==> Parameters: 10(Long)
+2020-04-04 12:34:21.877 [main] DEBUG c.x.m.ProductImgMapper.queryProductImgByProductId - <==      Total: 2
+2020-04-04 12:34:21.902 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductImgMapper.deleteProductImgByProductId] user[master] Stretegy,SqlCommanType[DELETE]..
+2020-04-04 12:34:21.903 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
+2020-04-04 12:34:21.903 [main] DEBUG c.x.m.ProductImgMapper.deleteProductImgByProductId - ==>  Preparing: DELETE FROM tb_product_img WHERE product_id=? 
+2020-04-04 12:34:21.904 [main] DEBUG c.x.m.ProductImgMapper.deleteProductImgByProductId - ==> Parameters: 10(Long)
+2020-04-04 12:34:21.918 [main] DEBUG c.x.m.ProductImgMapper.deleteProductImgByProductId - <==    Updates: 2
+2020-04-04 12:34:21.919 [main] DEBUG com.xyd.utils.ImageUtil - current realtiveAddr isupload\item\shop\2\2020-04-04-12-34-21-63810.jpg
+2020-04-04 12:34:21.919 [main] DEBUG com.xyd.utils.ImageUtil - current completeAddr isC:\projectdev\image\upload\item\shop\2\2020-04-04-12-34-21-63810.jpg
+2020-04-04 12:34:21.963 [main] DEBUG com.xyd.utils.ImageUtil - current realtiveAddr isupload\item\shop\2\2020-04-04-12-34-21-37559.jpg
+2020-04-04 12:34:21.963 [main] DEBUG com.xyd.utils.ImageUtil - current completeAddr isC:\projectdev\image\upload\item\shop\2\2020-04-04-12-34-21-37559.jpg
+2020-04-04 12:34:22.033 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductImgMapper.batchInsertProductImg] user[master] Stretegy,SqlCommanType[INSERT]..
+2020-04-04 12:34:22.033 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
+2020-04-04 12:34:22.068 [main] DEBUG c.x.mapper.ProductImgMapper.batchInsertProductImg - ==>  Preparing: INSERT INTO tb_product_img(img_addr,img_desc,priority,create_time,product_id) VALUES ( ?, ?, ?, ?, ? ) , ( ?, ?, ?, ?, ? ) 
+2020-04-04 12:34:22.077 [main] DEBUG c.x.mapper.ProductImgMapper.batchInsertProductImg - ==> Parameters: upload\item\shop\2\2020-04-04-12-34-21-63810.jpg(String), 商品号10的1号图片(String), 1(Integer), 2020-04-04 12:34:21.962(Timestamp), 10(Long), upload\item\shop\2\2020-04-04-12-34-21-37559.jpg(String), 商品号10的2号图片(String), 2(Integer), 2020-04-04 12:34:22.029(Timestamp), 10(Long)
+2020-04-04 12:34:22.093 [main] DEBUG c.x.mapper.ProductImgMapper.batchInsertProductImg - <==    Updates: 2
+2020-04-04 12:34:22.095 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductMapper.updateProduct] user[master] Stretegy,SqlCommanType[UPDATE]..
+2020-04-04 12:34:22.095 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:master
+2020-04-04 12:34:22.120 [main] DEBUG com.xyd.mapper.ProductMapper.updateProduct - ==>  Preparing: UPDATE tb_product SET product_name=?, product_desc=?, img_addr=?, last_edit_time=?, product_category_id=? where product_id=? and shop_id=? 
+2020-04-04 12:34:22.122 [main] DEBUG com.xyd.mapper.ProductMapper.updateProduct - ==> Parameters: 测试商品5(String), 测试商品5(String), upload\item\shop\2\2020-04-04-12-34-21-35798.jpg(String), 2020-04-04 12:34:21.197(Timestamp), 3(Long), 10(Long), 2(Long)
+2020-04-04 12:34:22.132 [main] DEBUG com.xyd.mapper.ProductMapper.updateProduct - <==    Updates: 1
+2020-04-04 18:01:30.828 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductMapper.queryProductList] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-04 18:01:30.831 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-04-04 18:01:30.872 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE 1=1 ORDER BY priority DESC LIMIT ?,? 
+2020-04-04 18:01:31.180 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2020-04-04 18:01:31.224 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - <==      Total: 3
+2020-04-04 18:04:09.416 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductMapper.queryProductList] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-04 18:04:09.420 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-04-04 18:04:09.441 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE 1=1 ORDER BY priority DESC LIMIT ?,? 
+2020-04-04 18:04:09.874 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2020-04-04 18:04:09.968 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - <==      Total: 3
+2020-04-04 18:04:09.985 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductMapper.queryProductList] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-04 18:04:09.985 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-04-04 18:04:09.986 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE 1=1 and product_name like '%测试%' ORDER BY priority DESC LIMIT ?,? 
+2020-04-04 18:04:09.987 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2020-04-04 18:04:09.995 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - <==      Total: 3
+2020-04-04 18:06:36.679 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductMapper.queryProductList] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-04 18:06:36.681 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-04-04 18:06:36.698 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE 1=1 ORDER BY priority DESC LIMIT ?,? 
+2020-04-04 18:06:36.968 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2020-04-04 18:06:37.021 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - <==      Total: 3
+2020-04-04 18:06:37.042 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductMapper.queryProductCount] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-04 18:06:37.048 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-04-04 18:06:37.048 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductCount - ==>  Preparing: SELECT count(*) FROM tb_product WHERE 1=1 and product_name like '%测试%' 
+2020-04-04 18:06:37.049 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductCount - ==> Parameters: 
+2020-04-04 18:06:37.052 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductCount - <==      Total: 1
+2020-04-04 18:07:13.747 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductMapper.queryProductList] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-04 18:07:13.754 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-04-04 18:07:13.873 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - ==>  Preparing: SELECT product_id, product_name, product_desc, img_addr, normal_price, promotion_price, priority, create_time, last_edit_time, enable_status, product_category_id, shop_id FROM tb_product WHERE 1=1 ORDER BY priority DESC LIMIT ?,? 
+2020-04-04 18:07:14.783 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - ==> Parameters: 0(Integer), 3(Integer)
+2020-04-04 18:07:14.855 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductList - <==      Total: 3
+2020-04-04 18:07:14.898 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ProductMapper.queryProductCount] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-04 18:07:14.898 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
+2020-04-04 18:07:14.901 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductCount - ==>  Preparing: SELECT count(*) FROM tb_product WHERE 1=1 and product_name like '%测试%' 
+2020-04-04 18:07:14.911 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductCount - ==> Parameters: 
+2020-04-04 18:07:14.917 [main] DEBUG com.xyd.mapper.ProductMapper.queryProductCount - <==      Total: 1
