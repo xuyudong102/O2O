@@ -106,6 +106,7 @@ public class ProductDaoTest extends BaseTest {
     }
 
     @Test
+    @Ignore
     public void testEQueryProductList(){
         Product productCondition = new Product();
         //分页查询 预期返回三个结果
@@ -118,5 +119,10 @@ public class ProductDaoTest extends BaseTest {
 
     }
 
-
+    @Test
+    public void testFUpdateProductCategoryToNull(){
+        long productCategoryId = 3L;
+        int effectedNum = productMapper.updateProductCategoryToNull(productCategoryId);
+        Assert.assertEquals(3,effectedNum);
+    }
 }

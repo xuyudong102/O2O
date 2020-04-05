@@ -51,9 +51,17 @@ public interface ProductMapper {
 
     /**
      * 安条件查询商品个数
+     *
      * @param productCondition 查询条件有 商品id 状态 商品名(模糊) 店铺id
      * @return
      */
     int queryProductCount(@Param("productCondition") Product productCondition);
+
+    /**
+     * 删除商品类别之前 将商品表的商品id字段置空
+     * @param productCategoryId
+     * @return
+     */
+    int updateProductCategoryToNull(@Param("productCategoryId")long productCategoryId);
 }
 

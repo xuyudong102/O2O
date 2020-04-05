@@ -34,4 +34,6 @@
         product_category_id=#{productCategoryId}
         AND shop_id=#{shopId}
     </delete>
+
+
 </mapper>

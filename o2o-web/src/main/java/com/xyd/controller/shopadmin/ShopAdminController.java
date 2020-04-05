@@ -31,4 +31,8 @@ public class ShopAdminController {
 
     @RequestMapping("/productoperation")
     public String productOperation(){return "shop/productoperation";}
+
+    //商品管理
+    @RequestMapping("/productmanagement")
+    public String productManagement(){return "shop/productmanagement";}
 }

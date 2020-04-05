@@ -5,6 +5,7 @@ import com.xyd.entity.ProductCategory;
 import com.xyd.enums.ProductCategoryStateEnum;
 import com.xyd.exceptions.ProductCategoryOperationException;
 import com.xyd.mapper.ProductCategoryMapper;
+import com.xyd.mapper.ProductMapper;
 import com.xyd.service.ProductCategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,6 +25,8 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
     @Autowired
     private ProductCategoryMapper productCategoryMapper;
+    @Autowired
+    private ProductMapper productMapper;
 
     /**
      * 商品类别的查询
@@ -42,20 +45,20 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
 
     @Override
     public ProductCategoryExecution batchAddProductCategory(List<ProductCategory> productCategoryList) throws ProductCategoryOperationException {
-        if(productCategoryList!=null){
+        if (productCategoryList != null) {
             try {
                 int effectedNum = productCategoryMapper.batchInsertProductCategory(productCategoryList);
-                if(effectedNum<=0){
+                if (effectedNum <= 0) {
                     //插入失败
                     throw new ProductCategoryOperationException("店铺类别创建失败");
-                }else{
+                } else {
                     //插入成功
                     return new ProductCategoryExecution(ProductCategoryStateEnum.SUCCESS);
                 }
-            }catch (Exception e){
+            } catch (Exception e) {
                 throw new ProductCategoryOperationException("batchAddProductCategory error" + e.getMessage());
             }
-        }else {
+        } else {
             //如果传递的列表为null
             return (new ProductCategoryExecution(ProductCategoryStateEnum.EMPTY_LIST));
         }
@@ -64,15 +67,20 @@ public class ProductCategoryServiceImpl implements ProductCategoryService {
     @Override
     @Transactional
     public ProductCategoryExecution deleteProductCategory(long productCategoryId, long shopId) throws ProductCategoryOperationException {
-        //TODO 将此商品类别下的商品类别id 置空
-        try{
-            int effectedNum = productCategoryMapper.deleteProductCategory(productCategoryId,shopId);
-            if(effectedNum<=0){
+        //接触tb_product里的商品与该productCategoryId的关联
+        //把商品表中的productCategoryId的值置空
+        try {
+            int effectedNum = productMapper.updateProductCategoryToNull(productCategoryId);
+            if (effectedNum < 0) {
                 throw new ProductCategoryOperationException("店铺商品类别删除失败");
-            }else{
-                return new ProductCategoryExecution(ProductCategoryStateEnum.SUCCESS);
             }
-        }catch (Exception e){
+            //删除该productCategory
+            effectedNum = productCategoryMapper.deleteProductCategory(productCategoryId, shopId);
+            if (effectedNum <= 0) {
+                throw new ProductCategoryOperationException("店铺商品类别删除失败");
+            }
+            return new ProductCategoryExecution(ProductCategoryStateEnum.SUCCESS);
+        } catch (Exception e) {
             throw new ProductCategoryOperationException("店铺商品类别删除失败");
         }
     }

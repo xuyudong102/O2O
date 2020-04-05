@@ -172,4 +172,14 @@
             </if>
         </where>
     </select>
+
+    <!--在删除商品类别之前  将商品的商品类别id字段置空-->
+    <update id="updateProductCategoryToNull" parameterType="long">
+        UPDATE
+        tb_product
+        SET
+        product_category_id=null
+        WHERE
+        product_category_id=#{productCategoryId}
+    </update>
 </mapper>
