@@ -25,9 +25,10 @@ import java.util.List;
 public class ShopDaoTest extends BaseTest {
     @Autowired
     private ShopMapper shopMapper;
+
     @Test
     @Ignore
-    public void testInsertShop(){
+    public void testInsertShop() {
         Shop shop = new Shop();
         PersonInfo owner = new PersonInfo();
         Area area = new Area();
@@ -49,12 +50,12 @@ public class ShopDaoTest extends BaseTest {
         shop.setPriority(1);
         shop.setLastEditTime(new Date());
         int effectedNum = shopMapper.insertShop(shop);
-        Assert.assertEquals(1,effectedNum);
+        Assert.assertEquals(1, effectedNum);
     }
 
     @Test
     @Ignore
-    public void testUpdateShop(){
+    public void testUpdateShop() {
         //区域信息不能更改
         Shop shop = new Shop();
         shop.setShopId(1);
@@ -62,11 +63,12 @@ public class ShopDaoTest extends BaseTest {
         shop.setShopAddr("测试地址");
         shop.setLastEditTime(new Date());
         int effectedNum = shopMapper.updateShop(shop);
-        Assert.assertEquals(1,effectedNum);
+        Assert.assertEquals(1, effectedNum);
     }
+
     @Test
     @Ignore
-    public  void  testQueryByShopId(){
+    public void testQueryByShopId() {
         long l = 2;
         Shop s = shopMapper.queryByShopId(l);
         System.out.println(s.getShopCategory().getShopCategoryName());
@@ -75,19 +77,20 @@ public class ShopDaoTest extends BaseTest {
     }
 
     @Test
-    public void testQueryShopList(){
+    public void testQueryShopList() {
         Shop shopCondition = new Shop();
         PersonInfo owner = new PersonInfo();
         owner.setUserId(1L);
         shopCondition.setOwner(owner);
-        ShopCategory sc = new ShopCategory();
-        sc.setShopCategoryId(2);
-        shopCondition.setShopCategory(sc);
-        List<Shop> shopList = shopMapper.queryShopList(shopCondition,0,2);
+        ShopCategory shopCategory = new ShopCategory();
+        ShopCategory parent = new ShopCategory();
+        parent.setShopCategoryId(12);
+        shopCategory.setParent(parent);
+        shopCondition.setShopCategory(shopCategory);
+        System.out.println(shopCondition);
+        List<Shop> shopList = shopMapper.queryShopList(shopCondition, 0, 6);
         System.out.println(shopList.size());
-        System.out.println(shopList.get(0));
         int count = shopMapper.queryShopCount(shopCondition);
-        System.out.println("店铺总数"+count);
-
+        System.out.println("店铺总数" + count);
     }
 }

@@ -5,18 +5,21 @@
 <mapper namespace="com.xyd.mapper.ShopCategoryMapper">
 	<!-- 定义SQL语句添加商铺-->
     <!--根据parentid 查询子对象-->
-    <!--如果传入的对象不为空 那么parent_id 也不能为空 -->
+    <!--如果传入的对象不为空 那么parent_id 也不能为空 返回二级列表 -->
+    <!--如果传入对象为空 那么parent_id为空 返回一级列表-->
     <select id="queryShopCategory" resultType="com.xyd.entity.ShopCategory" >
         select shop_category_id,shop_category_name,shop_category_desc,shop_category_img,
         priority,create_time,last_edit_time,parent_id
         from tb_shop_category
         <where>
+            1=1
+            <if test="shopCategoryCondition==null">
+                and parent_id is null
+            </if>
             <if test="shopCategoryCondition!=null">
                 and parent_id is not null
             </if>
-        </where>
-        <where>
-            <if test="shopCategoryCondition.parent!=null">
+            <if test="shopCategoryCondition!=null and shopCategoryCondition.parent!=null">
                 and parent_id = #{shopCategoryCondition.parent.shopCategoryId}
             </if>
         </where>

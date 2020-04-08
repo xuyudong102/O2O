@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <base href="/o2o/">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>商品主页</title>
+    <meta name="description" content="MSUI: Build mobile apps with simple HTML, CSS, and JS components.">
+    <meta name="author" content="阿里巴巴国际UED前端">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="format-detection" content="telephone=no">
+    <!-- Google Web Fonts -->
+    <link rel="stylesheet" href="resources/dist/css/sm.css">
+    <link rel="stylesheet" href="resources/dist/css/sm-extend.css">
+    <link rel="stylesheet" href="resources/dist/css/frontend/index.css">
+    <link rel="apple-touch-icon-precomposed" href="resources/assets/img/apple-touch-icon-114x114.png">
+    <script src="resources/assets/js/jquery.min.js"></script>
+    <script>
+        //ga
+    </script>
+</head>
+<body>
+<div class="page-group">
+    <div class="page page-current">
+        <!-- 标题栏 -->
+        <header class="bar bar-nav">
+            <!-- <a class="icon icon-me pull-left open-panel"></a>-->
+            <h1 class="title">My School O2O</h1>
+        </header>
+
+        <!-- 工具栏 -->
+        <nav class="bar bar-tab">
+            <a class="tab-item active" external href="#">
+                <span class="icon icon-home"></span>
+                <span class="tab-label">首页</span>
+            </a>
+            <a class="tab-item" href="#" id="me">
+                <span class="icon icon-me"></span>
+                <span class="tab-label">我</span>
+            </a>
+        </nav>
+
+        <!-- 这里是页面内容区 -->
+        <div class="content">
+            <!--轮播图展示区-->
+            <div class="swiper-container" data-space-between='10'>
+                <div class="swiper-wrapper">
+                    <!--<div class="swiper-slide"><img src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1n3rZHFXXXXX9XFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i4/TB10rkPGVXXXXXGapXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg" alt=""></div>
+                    <div class="swiper-slide"><img src="//gqianniu.alicdn.com/bao/uploaded/i4//tfscom/i1/TB1kQI3HpXXXXbSXFXXXXXXXXXX_!!0-item_pic.jpg_320x320q60.jpg" alt=""></div>-->
+
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+            <!--全类查询区-->
+            <div class="total-shop-button">
+                <a href="/o2o/frontend/shoplist" external>全部商店</a>
+            </div>
+            <!--一级类别展示区域-->
+            <div class="row">
+                <!--
+                <div class="col-50 shop-classify">
+                    <div class="word">
+                        <p class="shop-title">本期推荐</p>
+                        <p class="shop-desc">近期相关活动 新品上市 旅游资讯</p>
+                    </div>
+                    <div class="shop-classify-img-wrap">
+                        <img class="shop-img" src="static/index/display13.png">
+                    </div>
+                </div>
+                -->
+            </div>
+        </div>
+    </div>
+    <!-- 侧边栏 -->
+    <div class="panel-overlay"></div>
+    <!-- Left Panel with Reveal effect -->
+    <div class="panel panel-right panel-reveal" id="panel-right-demo">
+        <div class="content-block">
+            <p>
+            <p>
+                <a href="/o2o/local/accountbind?usertype=1" class="close-panel">绑定帐号</a>
+            </p>
+            <p>
+                <a href="/o2o/local/changepsw?usertype=1" class="close-panel">修改密码</a>
+            </p>
+            <p>
+                <a href="/o2o/frontend/myrecord" class="close-panel">消费记录</a>
+            </p>
+            <p>
+                <a href="/o2o/frontend/mypoint" class="close-panel">我的积分</a>
+            </p>
+            <p>
+                <a href="/o2o/frontend/pointrecord" class="close-panel">兑换记录</a>
+            </p>
+            <p>
+                <a href="#" usertype="1" class="close-panel" id="log-out">登出系统</a>
+            </p>
+            <!-- Click on link with "close-panel" class will close panel -->
+            </p>
+        </div>
+    </div>
+</div>
+<script src="resources/dist/js/sm.js"></script>
+<script type='text/javascript' src='resources/dist/js/sm-extend.js' charset='utf-8'></script>
+<script src="resources/dist/js/frontend/index.js"></script>
+</body>
+</html>

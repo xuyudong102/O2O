@@ -106,6 +106,12 @@ public class ProductManagementController {
         //非空判断
         if (productId > -1) {
             Product product = productService.getProductById(productId);
+            if(product.getProductCategory()==null){
+                //如果为null的话 随便给个值
+                ProductCategory productCategory = new ProductCategory();
+                productCategory.setProductCategoryId(2L);
+                product.setProductCategory(productCategory);
+            }
             //获取所有的商品类别信息 需要根据shopid
             List<ProductCategory> productCategoryList = productCategoryService.getProductCategoryList(product.getShop().getShopId());
             modelMap.put("product", product);

@@ -1,6 +1,12 @@
 com\xyd\service\impl\ShopCategoryServiceImpl.class
 com\xyd\service\ShopService.class
+com\xyd\service\HeadLineService.class
+com\xyd\service\impl\ProductServiceImpl.class
+com\xyd\service\ProductCategoryService.class
 com\xyd\service\impl\ShopServiceImpl.class
 com\xyd\service\AreaService.class
 com\xyd\service\ShopCategoryService.class
+com\xyd\service\HeadLineServiceImpl.class
+com\xyd\service\ProductService.class
 com\xyd\service\impl\AreaServiceImpl.class
+com\xyd\service\impl\ProductCategoryServiceImpl.class

@@ -109,11 +109,16 @@
         <where>
             /*店铺类别*/
             1=1
-            <if test="shopCondition.shopCategory!=null and shopCondition.shopCategory.shopCategoryId!=null">
+            <if test="shopCondition.shopCategory!=null and shopCondition.shopCategory.shopCategoryId!=0">
                 and s.shop_category_id=#{shopCondition.shopCategory.shopCategoryId}
             </if>
+            /*依据店铺父类别id查询 子类别店铺*/
+            <if test="shopCondition.shopCategory!=null and shopCondition.shopCategory.parent!=null and shopCondition.shopCategory.parent.shopCategoryId!=0 ">
+                and s.shop_category_id in(select shop_category_id from tb_shop_category where
+                parent_id=#{shopCondition.shopCategory.parent.shopCategoryId})
+            </if>
             /*店铺区域*/
-            <if test="shopCondition.area!=null and shopCondition.area.areaId!=null">
+            <if test="shopCondition.area!=null and shopCondition.area.areaId!=0">
                 and s.area_id=#{shopCondition.area.areaId}
             </if>
             /*店铺名字模糊查询*/
@@ -134,24 +139,29 @@
             s.shop_category_id=sc.shop_category_id
         </where>
         ORDER BY
-            s.priority desc
+        s.priority desc
         LIMIT
-            #{rowIndex},#{pageSize}
+        #{rowIndex},#{pageSize}
     </select>
     <!--查询shop商铺的总数-->
     <select id="queryShopCount" resultType="int">
         SELECT
-            count(*)
+        count(*)
         FROM
         tb_shop s
         <where>
             1=1
             /*店铺类别*/
-            <if test="shopCondition.shopCategory!=null and shopCondition.shopCategory.shopCategoryId!=null">
+            <if test="shopCondition.shopCategory!=null and shopCondition.shopCategory.shopCategoryId!=0">
                 AND s.shop_category_id=#{shopCondition.shopCategory.shopCategoryId}
             </if>
+            /*依据店铺父类别id查询*/
+            <if test="shopCondition.shopCategory!=null and shopCondition.shopCategory.parent!=null and shopCondition.shopCategory.parent.shopCategoryId!=null ">
+                and s.shop_category_id in(select shop_category_id from tb_shop_category where
+                parent_id=#{shopCondition.shopCategory.parent.shopCategoryId})
+            </if>
             /*店铺区域*/
-            <if test="shopCondition.area!=null and shopCondition.area.areaId!=null">
+            <if test="shopCondition.area!=null and shopCondition.area.areaId!=0">
                 AND s.area_id=#{shopCondition.area.areaId}
             </if>
             /*店铺名字模糊查询*/

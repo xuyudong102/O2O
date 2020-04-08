@@ -1,3 +1,4 @@
+com\xyd\exceptions\ProductOperationException.class
 com\xyd\utils\ImageUtil.class
 com\xyd\exceptions\ProductCategoryOperationException.class
 com\xyd\utils\PageCalculator.class

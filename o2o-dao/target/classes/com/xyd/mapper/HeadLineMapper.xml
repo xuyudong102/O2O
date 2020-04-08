@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace指定和哪个Mapper映射器接口对应 -->
+<mapper namespace="com.xyd.mapper.HeadLineMapper">
+    <!-- 定义SQL语句添加商铺-->
+    <select id="queryHeadLine"  resultType="com.xyd.entity.HeadLine">
+        SELECT
+        line_id,
+        line_name,
+        line_link,
+        line_img,
+        priority,
+        enable_status,
+        create_time,
+        last_edit_time
+        FROM
+        tb_head_line
+        <where>
+            <if test="headLineCondition.enableStatus!=null">
+                and enable_status=#{headLineCondition.enableStatus}
+            </if>
+        </where>
+        ORDER BY
+        priority DESC
+    </select>
+</mapper>

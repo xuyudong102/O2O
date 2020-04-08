@@ -5,6 +5,6 @@
 <mapper namespace="com.xyd.mapper.AreaMapper">
 	<!-- 定义SQL语句 -->	
     <select id="queryArea" resultType="com.xyd.entity.Area">
-        select * from tb_area order by priority desc
+        SELECT * FROM TB_AREA ORDER BY PRIORITY DESC
     </select>
 </mapper>

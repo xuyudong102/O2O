@@ -21,10 +21,10 @@ public class PathUtil {
         String basePath="";
         if(os.toLowerCase().startsWith("win")){
             //如果是windows系统
-            basePath="C:/projectdev/image/";
+            basePath="C:/projectdev/image";
         }else{
             //如果是linux系统
-            basePath="/home/o2o/image/";
+            basePath="/home/o2o/image";
         }
         basePath=basePath.replace("/",separator);
         return basePath;
@@ -35,7 +35,7 @@ public class PathUtil {
      * @return
      */
     public static String getShopImgPath(long shopId){
-        String imagePath="upload/item/shop/"+shopId+"/";
+        String imagePath="/upload/item/shop/"+shopId+"/";
         //返回每一张图片的具体路径
         return imagePath.replace("/",separator);
     }

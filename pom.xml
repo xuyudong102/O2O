@@ -181,6 +181,10 @@
           <port>8888</port>
           <server>tomcat7</server>
           <path>/o2o</path>
+          <staticContextPath>/upload</staticContextPath>
+          <staticContextDocbase>C:/projectdev/image/upload</staticContextDocbase>
+          <contextReloadable>false</contextReloadable>
+          <useTestClasspath>true</useTestClasspath>
         </configuration>
       </plugin>
       <!--指定jdk版本插件-->

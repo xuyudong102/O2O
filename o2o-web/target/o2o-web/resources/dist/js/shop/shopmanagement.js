@@ -12,6 +12,7 @@ $(function () {
                 shopId = data.shopId;
             }
             $("#shopInfo").attr("href","/o2o/shopadmin/shopoperation?shopId="+shopId);
+            $("#productCategoryManage").attr("href","/o2o/shopadmin/productcategorymanagement?shopId="+shopId);
         }
     });
 

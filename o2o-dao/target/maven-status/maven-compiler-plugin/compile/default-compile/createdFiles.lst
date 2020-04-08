@@ -1,6 +1,10 @@
 com\xyd\split\DynamicDataSourceInterceptor.class
 com\xyd\mapper\AreaMapper.class
 com\xyd\mapper\ShopMapper.class
+com\xyd\mapper\HeadLineMapper.class
 com\xyd\mapper\ShopCategoryMapper.class
 com\xyd\split\DynamicDataSource.class
+com\xyd\mapper\ProductImgMapper.class
 com\xyd\split\DynamicDataSourceHolder.class
+com\xyd\mapper\ProductMapper.class
+com\xyd\mapper\ProductCategoryMapper.class
