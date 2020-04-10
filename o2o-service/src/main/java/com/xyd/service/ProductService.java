@@ -49,5 +49,5 @@ public interface ProductService {
      * @param pageSize
      * @return
      */
-    ProductExecution getProductList(Product productCondition,int pageIndex,int pageSize);
+    ProductExecution getProductList(Product productCondition, int pageIndex, int pageSize);
 }
