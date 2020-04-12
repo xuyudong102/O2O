@@ -5,4 +5,7 @@ com\xyd\utils\PageCalculator.class
 com\xyd\exceptions\ShopOperationException.class
 com\xyd\utils\CodeUtil.class
 com\xyd\utils\HttpServletRequestUtil.class
+com\xyd\utils\MyX509TrustManager.class
+com\xyd\utils\WechatUtil.class
 com\xyd\utils\PathUtil.class
+com\xyd\utils\SignUtil.class

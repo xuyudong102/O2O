@@ -2,6 +2,7 @@ com\xyd\entity\LocalAuth.class
 com\xyd\entity\PersonInfo.class
 com\xyd\dto\ProductCategoryExecution.class
 com\xyd\entity\Product.class
+com\xyd\dto\UserAccessToken.class
 com\xyd\enums\ProductStateEnum.class
 com\xyd\enums\ShopStateEnum.class
 com\xyd\entity\ShopCategory.class
@@ -15,3 +16,4 @@ com\xyd\enums\ProductCategoryStateEnum.class
 com\xyd\dto\ProductExecution.class
 com\xyd\entity\Area.class
 com\xyd\entity\HeadLine.class
+com\xyd\dto\WechatUser.class

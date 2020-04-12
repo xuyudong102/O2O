@@ -15,6 +15,7 @@
     <!-- Google Web Fonts -->
     <link rel="stylesheet" href="resources/dist/css/sm.css">
     <link rel="stylesheet" href="resources/dist/css/sm-extend.css">
+    <link rel="stylesheet" href="resources/dist/css/frontend/index.css">
     <link rel="apple-touch-icon-precomposed" href="resources/assets/img/apple-touch-icon-114x114.png">
     <script src="resources/assets/js/jquery.min.js"></script>
     <script>
@@ -32,7 +33,7 @@
 
         <!-- 工具栏 -->
         <nav class="bar bar-tab">
-            <a class="tab-item active" href="#">
+            <a class="tab-item active" external href="/o2o/frontend/index">
                 <span class="icon icon-home"></span>
                 <span class="tab-label">首页</span>
             </a>
@@ -80,9 +81,25 @@
     <div class="panel panel-right panel-reveal" id="panel-right-demo">
         <div class="content-block">
             <p>
-                <a href="/o2o/frontend/myrecord">消费记录</a>
-                <a href="/o2o/frontend/mypoint">我的积分</a>
-                <a href="/o2o/frontend/pointrecord">兑换记录</a>
+            <p>
+                <a href="/o2o/local/accountbind?usertype=1" class="close-panel">绑定帐号</a>
+            </p>
+            <p>
+                <a href="/o2o/local/changepsw?usertype=1" class="close-panel">修改密码</a>
+            </p>
+            <p>
+                <a href="/o2o/frontend/myrecord" class="close-panel">消费记录</a>
+            </p>
+            <p>
+                <a href="/o2o/frontend/mypoint" class="close-panel">我的积分</a>
+            </p>
+            <p>
+                <a href="/o2o/frontend/pointrecord" class="close-panel">兑换记录</a>
+            </p>
+            <p>
+                <a href="#" usertype="1" class="close-panel" id="log-out">登出系统</a>
+            </p>
+            <!-- Click on link with "close-panel" class will close panel -->
             </p>
         </div>
     </div>

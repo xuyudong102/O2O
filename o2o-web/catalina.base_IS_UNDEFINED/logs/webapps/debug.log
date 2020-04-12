@@ -1,53 +1,26 @@
-2020-04-08 11:41:39.570 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-04-08 11:41:39.591 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-04-08 11:41:39.623 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE /*店铺类别*/ 1=1 and s.shop_category_id=? /*依据店铺父类别id查询 子类别店铺*/ and s.shop_category_id in(select shop_category_id from tb_shop_category where parent_id=?); /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority desc LIMIT ?,? 
-2020-04-08 11:41:39.867 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==> Parameters: 0(Long), 12(Long), 1(Long), 0(Integer), 6(Integer)
-2020-04-08 11:47:23.485 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-04-08 11:47:23.491 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-04-08 11:47:23.519 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE /*店铺类别*/ 1=1 and s.shop_category_id=? /*依据店铺父类别id查询 子类别店铺*/ and s.shop_category_id in(select shop_category_id from tb_shop_category where parent_id=?) /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority desc LIMIT ?,? 
-2020-04-08 11:47:23.755 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==> Parameters: 0(Long), 12(Long), 1(Long), 0(Integer), 6(Integer)
-2020-04-08 11:47:23.795 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - <==      Total: 0
-2020-04-08 11:47:23.808 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopCount] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-04-08 11:47:23.808 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-04-08 11:47:23.809 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==>  Preparing: SELECT count(*) FROM tb_shop s WHERE 1=1 /*店铺类别*/ AND s.shop_category_id=? /*依据店铺父类别id查询*/ and s.shop_category_id in(select shop_category_id from tb_shop_category where parent_id=?); /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? 
-2020-04-08 11:47:23.810 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==> Parameters: 0(Long), 12(Long), 1(Long)
-2020-04-08 11:47:56.702 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-04-08 11:47:56.705 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-04-08 11:47:56.732 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE /*店铺类别*/ 1=1 and s.shop_category_id=? /*依据店铺父类别id查询 子类别店铺*/ and s.shop_category_id in(select shop_category_id from tb_shop_category where parent_id=?) /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority desc LIMIT ?,? 
-2020-04-08 11:47:56.956 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==> Parameters: 0(Long), 12(Long), 1(Long), 0(Integer), 6(Integer)
-2020-04-08 11:47:56.995 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - <==      Total: 0
-2020-04-08 11:47:57.006 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopCount] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-04-08 11:47:57.007 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-04-08 11:47:57.008 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==>  Preparing: SELECT count(*) FROM tb_shop s WHERE 1=1 /*店铺类别*/ AND s.shop_category_id=? /*依据店铺父类别id查询*/ and s.shop_category_id in(select shop_category_id from tb_shop_category where parent_id=?) /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? 
-2020-04-08 11:47:57.009 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==> Parameters: 0(Long), 12(Long), 1(Long)
-2020-04-08 11:47:57.017 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - <==      Total: 1
-2020-04-08 11:56:31.500 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-04-08 11:56:31.503 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-04-08 11:56:31.553 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE /*店铺类别*/ 1=1 and s.shop_category_id=? /*依据店铺父类别id查询 子类别店铺*/ and s.shop_category_id in(select shop_category_id from tb_shop_category where parent_id=?) /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority desc LIMIT ?,? 
-2020-04-08 11:56:31.851 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==> Parameters: 0(Long), 12(Long), 1(Long), 0(Integer), 6(Integer)
-2020-04-08 11:56:31.898 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - <==      Total: 0
-2020-04-08 11:56:31.910 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopCount] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-04-08 11:56:31.913 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-04-08 11:56:31.917 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==>  Preparing: SELECT count(*) FROM tb_shop s WHERE 1=1 /*店铺类别*/ AND s.shop_category_id=? /*依据店铺父类别id查询*/ and s.shop_category_id in(select shop_category_id from tb_shop_category where parent_id=?) /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? 
-2020-04-08 11:56:31.920 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==> Parameters: 0(Long), 12(Long), 1(Long)
-2020-04-08 11:56:31.925 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - <==      Total: 1
-2020-04-08 11:59:21.986 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-04-08 11:59:21.989 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-04-08 11:59:22.024 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE /*店铺类别*/ 1=1 /*依据店铺父类别id查询 子类别店铺*/ and s.shop_category_id in(select shop_category_id from tb_shop_category where parent_id=?) /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority desc LIMIT ?,? 
-2020-04-08 11:59:22.258 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==> Parameters: 12(Long), 1(Long), 0(Integer), 6(Integer)
-2020-04-08 11:59:22.317 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - <==      Total: 5
-2020-04-08 11:59:22.333 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopCount] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-04-08 11:59:22.334 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-04-08 11:59:22.336 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==>  Preparing: SELECT count(*) FROM tb_shop s WHERE 1=1 /*店铺类别*/ /*依据店铺父类别id查询*/ and s.shop_category_id in(select shop_category_id from tb_shop_category where parent_id=?) /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? 
-2020-04-08 11:59:22.337 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==> Parameters: 12(Long), 1(Long)
-2020-04-08 11:59:22.340 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - <==      Total: 1
-2020-04-08 16:48:31.907 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-04-08 16:48:31.909 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-04-08 16:48:31.937 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==>  Preparing: SELECT s.shop_id, s.shop_name, s.shop_desc, s.shop_addr, s.phone, s.shop_img, s.priority, s.last_edit_time, s.enable_status, s.advice, sc.shop_category_id, sc.shop_category_name, a.area_id, a.area_name FROM tb_shop s, tb_shop_category sc, tb_area a WHERE /*店铺类别*/ 1=1 /*依据店铺父类别id查询 子类别店铺*/ and s.shop_category_id in(select shop_category_id from tb_shop_category where parent_id=?) /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? AND s.area_id=a.area_id AND s.shop_category_id=sc.shop_category_id ORDER BY s.priority desc LIMIT ?,? 
-2020-04-08 16:48:32.136 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - ==> Parameters: 12(Long), 1(Long), 0(Integer), 6(Integer)
-2020-04-08 16:48:32.258 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopList - <==      Total: 5
-2020-04-08 16:48:32.278 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - 设置方法[com.xyd.mapper.ShopMapper.queryShopCount] user[slave] Stretegy,SqlCommanType[SELECT]..
-2020-04-08 16:48:32.278 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - 所使用的数据源为:slave
-2020-04-08 16:48:32.280 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==>  Preparing: SELECT count(*) FROM tb_shop s WHERE 1=1 /*店铺类别*/ /*依据店铺父类别id查询*/ and s.shop_category_id in(select shop_category_id from tb_shop_category where parent_id=?) /*店铺区域*/ /*店铺名字模糊查询*/ /*店铺状态查询*/ /*店铺人员信息查询*/ AND s.owner_id=? 
-2020-04-08 16:48:32.281 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - ==> Parameters: 12(Long), 1(Long)
-2020-04-08 16:48:32.287 [main] DEBUG com.xyd.mapper.ShopMapper.queryShopCount - <==      Total: 1
+2020-04-12 10:00:48.461 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.AreaMapper.queryArea] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-12 10:00:48.471 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:slave
+2020-04-12 10:00:51.396 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.HeadLineMapper.queryHeadLine] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-12 10:00:51.449 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:slave
+2020-04-12 10:00:54.098 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.ProductCategoryMapper.batchInsertProductCategory] user[master] Stretegy,SqlCommanType[INSERT]..
+2020-04-12 10:00:54.099 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:master
+2020-04-12 10:00:56.613 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-12 10:00:56.613 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:slave
+2020-04-12 10:00:59.111 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-12 10:00:59.112 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:slave
+2020-04-12 10:00:59.291 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.ProductMapper.updateProductCategoryToNull] user[master] Stretegy,SqlCommanType[UPDATE]..
+2020-04-12 10:00:59.291 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:master
+2020-04-12 10:01:01.869 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.ProductImgMapper.queryProductImgByProductId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-12 10:01:01.869 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:slave
+2020-04-12 10:01:04.557 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.ShopCategoryMapper.queryShopCategory] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-12 10:01:04.557 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:slave
+2020-04-12 10:01:04.898 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-12 10:01:04.898 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:slave
+2020-04-12 10:01:05.066 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.AreaMapper.queryArea] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-12 10:01:05.066 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:slave
+2020-04-12 10:01:05.331 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.ProductCategoryMapper.queryProductCategoryByShopId] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-12 10:01:05.331 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:slave
+2020-04-12 10:01:08.256 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.ProductMapper.queryProductById] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-12 10:01:08.256 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:slave
+2020-04-12 10:01:08.313 [main] DEBUG com.xyd.split.DynamicDataSourceInterceptor - ���÷���[com.xyd.mapper.ShopMapper.queryShopList] user[slave] Stretegy,SqlCommanType[SELECT]..
+2020-04-12 10:01:08.313 [main] DEBUG com.xyd.split.DynamicDataSourceHolder - ��ʹ�õ�����ԴΪ:slave

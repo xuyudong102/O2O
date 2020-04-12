@@ -178,7 +178,7 @@
         <artifactId>tomcat7-maven-plugin</artifactId>
         <version>2.2</version>
         <configuration>
-          <port>8888</port>
+          <port>8889</port>
           <server>tomcat7</server>
           <path>/o2o</path>
           <staticContextPath>/upload</staticContextPath>

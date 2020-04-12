@@ -1,9 +1,11 @@
+com\xyd\controller\wechat\WechatController.class
 com\xyd\controller\shopadmin\ProductManagementController.class
 com\xyd\controller\frontend\ShopDetailController.class
 com\xyd\controller\frontend\FrontendController.class
 com\xyd\controller\shopadmin\ShopListController.class
 com\xyd\controller\superadmin\AreaController.class
 com\xyd\controller\frontend\MainPageController.class
+com\xyd\controller\wechat\WechatLoginController.class
 com\xyd\controller\shopadmin\ShopAdminController.class
 com\xyd\controller\frontend\ProductDetailController.class
 com\xyd\controller\shopadmin\ShopManagementController.class
